@@ -5,8 +5,8 @@ export const NAV_LINKS = [
     children: [
       { href: "/services/farmers", label: "For Farmers" },
       { href: "/services/partners", label: "For Partners" },
-      { href: "/services/agridealers", label: "For Agri-dealers" },
-      { href: "services/investors", label: "For Investors" },
+      { href: "/services/agrodealers", label: "For Agri-dealers" },
+      { href: "/services/investors", label: "For Investors" },
     ], 
   },
 
