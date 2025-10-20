@@ -1,6 +1,15 @@
 export const NAV_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
+  // { href: "/services", label: "Services" },
+  { label: "Services",
+    children: [
+      { href: "/services/farmers", label: "For Farmers" },
+      { href: "/services/partners", label: "For Partners" },
+      { href: "/services/agridealers", label: "For Agri-dealers" },
+      { href: "services/investors", label: "For Investors" },
+    ], 
+  },
+
   { href: "/products", label: "Products" },
   {
     label: "Get Involved",
