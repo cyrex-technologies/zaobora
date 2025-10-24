@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { SERVICE_CATEGORIES } from "@/lib/constants/service-categories";
-import { FaUserGraduate, FaSeedling, FaStore, FaChartLine, FaHandshake } from 'react-icons/fa6';
+import { FaSeedling, FaStore, FaChartLine, FaHandshake } from 'react-icons/fa6';
 
 const SECTION_CONTENT = {
   sectionId: "services",

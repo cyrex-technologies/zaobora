@@ -1,7 +1,7 @@
 // src/lib/constants/service-list.tsx
-import { ServiceSectionType, ServiceCardType, ServiceCategory } from "../../types/service";
-import { FaUserGraduate, FaSeedling, FaCreditCard, FaFlask, FaChartBar, FaRadio, FaHandshake } from 'react-icons/fa6';
-import { FaTint } from 'react-icons/fa';
+import { ServiceSectionType,  ServiceCategory } from "../../types/service";
+// import { FaUserGraduate, FaSeedling, FaCreditCard, FaFlask, FaChartBar, FaRadio, FaHandshake } from 'react-icons/fa6';
+// import { FaTint } from 'react-icons/fa';
 
 export const SERVICES_CONTENT: ServiceSectionType = {
   sectionId: "services",
