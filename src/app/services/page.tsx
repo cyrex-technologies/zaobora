@@ -6,7 +6,7 @@ import React, { useState, useEffect, useRef, useMemo } from "react";
 import Link from "next/link";
 import {
   FaArrowRight,
-  FaFilter,
+  FaFilter,   
   FaList,
 } from "react-icons/fa6";
 import { FaThLarge} from "react-icons/fa";

@@ -1,18 +1,19 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { SERVICES_CONTENT } from "@/lib/constants/service-list";
-import { FaUserGraduate, FaSeedling, FaCreditCard, FaFlask, FaChartBar, FaRadio, FaHandshake } from 'react-icons/fa6';
-import { FaTint } from 'react-icons/fa';
-const ICONS = {
-  FaUserGraduate,
-  FaSeedling,
-  FaCreditCard,
-  FaFlask,
-  FaChartBar,
-  FaRadio,
-  FaHandshake,
-  FaTint,
+import { SERVICE_CATEGORIES } from "@/lib/constants/service-categories";
+import { FaUserGraduate, FaSeedling, FaStore, FaChartLine, FaHandshake } from 'react-icons/fa6';
+
+const SECTION_CONTENT = {
+  sectionId: "services",
+  subtitle: "Our Services",
+  title: "Explore Our Main Service Categories",
+};
+const CATEGORY_ICONS = {
+  farmers: FaSeedling,
+  agrodealers: FaStore,
+  investors: FaChartLine,
+  partners: FaHandshake,
 };
 
 // Proper TypeScript Interface for Service Card
@@ -130,7 +131,7 @@ const ServiceSection = () => {
           setIsVisible(true);
           
           // Stagger card animations
-          SERVICES_CONTENT.cards.forEach((_, index) => {
+          Object.keys(SERVICE_CATEGORIES).forEach((_, index) => {
             setTimeout(() => {
               setVisibleCards(prev => [...prev, index]);
             }, index * 150);
@@ -150,23 +151,18 @@ const ServiceSection = () => {
   return (
     <section
       ref={sectionRef}
-      id={SERVICES_CONTENT.sectionId}
+      id={SECTION_CONTENT.sectionId}
       className="relative py-20 overflow-hidden"
     >
       {/* Background with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: `url('${SERVICES_CONTENT.backgroundImage}')` }}
-      />
+      <div className="absolute inset-0 bg-cover bg-center bg-fixed bg-services-pattern" />
       <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-green-50/90 to-white/95" />
 
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-20 w-32 h-32 bg-green-200/20 rounded-full animate-pulse" />
-        <div className="absolute bottom-20 right-20 w-24 h-24 bg-emerald-200/30 rounded-full animate-bounce" 
-             style={{ animationDelay: "2s" }} />
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-green-300/25 rounded-full animate-ping" 
-             style={{ animationDuration: "4s" }} />
+        <div className="absolute bottom-20 right-20 w-24 h-24 bg-emerald-200/30 rounded-full animate-bounce delay-2000" />
+        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-green-300/25 rounded-full animate-ping duration-4000" />
       </div>
 
       <div className="container mx-auto px-4 lg:px-6 relative z-10">
@@ -181,80 +177,49 @@ const ServiceSection = () => {
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="w-12 h-0.5 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full" />
               <span className="text-green-600 uppercase font-semibold text-sm tracking-wide">
-                {SERVICES_CONTENT.subtitle}
+                {SECTION_CONTENT.subtitle}
               </span>
               <div className="w-12 h-0.5 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full" />
             </div>
 
             {/* Main Title */}
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              <span className="block">{SERVICES_CONTENT.title.split(' ').slice(0, 2).join(' ')}</span>
+              <span className="block">Explore Our Main</span>
               <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                {SERVICES_CONTENT.title.split(' ').slice(2).join(' ')}
+                Service Categories
               </span>
             </h2>
 
             <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              We provide integrated agricultural solutions that support farmers from knowledge and training to inputs, finance, technology, and research. Our goal is to improve productivity, profitability, and sustainability while making farmers more resilient and prosperous.
+              We provide comprehensive services tailored to every aspect of the agricultural value chain. 
+              From empowering farmers with modern tools to connecting agribusinesses with opportunities, 
+              we&apos;re here to support your agricultural journey.
             </p>
           </div>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {SERVICES_CONTENT.cards.map((service, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
+          {Object.entries(SERVICE_CATEGORIES).map(([key, category], index) => (
             <div
-              key={index}
-              className={`transform transition-all duration-700 ${
+              key={key}
+              className={`transform transition-all duration-700 animate-delay-${index} ${
                 visibleCards.includes(index) 
                   ? 'translate-y-0 opacity-100' 
                   : 'translate-y-10 opacity-0'
               }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
             >
               <ServiceCard
-                {...service}
-                icon={ICONS[service.icon as keyof typeof ICONS]}
+                title={category.title}
+                description={category.tagline}
+                icon={CATEGORY_ICONS[key as keyof typeof CATEGORY_ICONS]}
+                href={`/services/${key}`}
               />
             </div>
           ))}
         </div>
 
-        {/* Bottom CTA Section */}
-        {/* <div className={`text-center mt-16 transform transition-all duration-1000 delay-1000 ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-        }`}>
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-green-100 p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Ready to Transform Your Farm?
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Get personalized consultation and discover which services are perfect for your agricultural goals.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-green-600 to-emerald-600 
-                         text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl 
-                         transform hover:scale-105 transition-all duration-300 group"
-              >
-                <span>Get Started Today</span>
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" 
-                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-              <a
-                href="/services"
-                className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 
-                         font-semibold border-2 border-green-200 hover:border-green-300 
-                         px-8 py-4 rounded-xl transition-all duration-300"
-              >
-                <span>View All Services</span>
-              </a>
-            </div>
-          </div>
-        </div> */}
+        
       </div>
     </section>
   );

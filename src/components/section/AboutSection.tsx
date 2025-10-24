@@ -88,7 +88,7 @@ const AboutSection = () => {
                             rounded-xl shadow-lg p-4 transform -rotate-3 hover:rotate-0 transition-transform duration-300 
                             group-hover:scale-110">
                 <div className="text-center">
-                  <div className="text-xl font-bold">1000+</div>
+                  <div className="text-xl font-bold">5000+</div>
                   <div className="text-xs opacity-90">Farmers Empowered</div>
                 </div>
               </div>

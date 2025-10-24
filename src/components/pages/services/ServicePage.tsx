@@ -10,12 +10,16 @@ import { FaCheck } from "react-icons/fa6";
 
 interface ServiceData {
   title: string;
-  emoji: string;
+  emoji?: string;
+  icon?: string;
   category: string;
   shortDescription: string;
-  fullDescription: string;
+  description: string;
+  fullDescription?: string;
   keyBenefits?: string[];
-    detailedServices?: { title: string; description: string; icon: string }[];
+  detailedServices?: { title: string; description: string; icon: string }[];
+  processSteps?: { step: number; title: string; description: string }[];
+  bgColor?: string;
 }
 
 export default function ServicePage({ serviceData }: { serviceData: ServiceData }) {

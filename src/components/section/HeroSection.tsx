@@ -71,7 +71,7 @@ const HeroSection = () => {
             {/* Statistics */}
             <div className="grid grid-cols-3 gap-6 py-6">
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-green-600">1000+</div>
+                <div className="text-2xl md:text-3xl font-bold text-green-600">5000+</div>
                 <div className="text-sm text-gray-600">Farmers Helped</div>
               </div>
               <div className="text-center">

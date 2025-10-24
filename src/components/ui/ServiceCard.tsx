@@ -1,17 +1,12 @@
 "use client";
 import Link from 'next/link';
-import { FaArrowRight, FaUserGraduate, FaSeedling, FaCreditCard, FaFlask, FaChartBar, FaRadio, FaHandshake } from 'react-icons/fa6';
-import { FaTint } from 'react-icons/fa';
+import { FaArrowRight } from 'react-icons/fa6';
+import * as FaIcons from 'react-icons/fa6';
+import * as FaIconsOld from 'react-icons/fa';
 
-const ICONS = {
-  FaUserGraduate,
-  FaSeedling,
-  FaCreditCard,
-  FaFlask,
-  FaChartBar,
-  FaRadio,
-  FaHandshake,
-  FaTint,
+const ICONS: { [key: string]: React.ComponentType } = {
+    ...FaIcons,
+    ...FaIconsOld
 };
 
 interface ServiceCardProps {

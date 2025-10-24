@@ -1,167 +1,111 @@
-
-// import { 
-//   FaUserGraduate, 
-//   FaSeedling, 
-//   FaCreditCard, 
-//   FaFlask,  
-//   FaChartBar, 
-//   FaRadio, 
-//   FaHandshake 
-// } from 'react-icons/fa6';
-// import { FaTint } from 'react-icons/fa';
-import { ServiceSectionType } from "@/types/service";
+// src/lib/constants/service-list.tsx
+import { ServiceSectionType, ServiceCardType, ServiceCategory } from "../../types/service";
+import { FaUserGraduate, FaSeedling, FaCreditCard, FaFlask, FaChartBar, FaRadio, FaHandshake } from 'react-icons/fa6';
+import { FaTint } from 'react-icons/fa';
 
 export const SERVICES_CONTENT: ServiceSectionType = {
   sectionId: "services",
   subtitle: "Our Services",
   title: "Integrated Agricultural Solutions",
-  description: "We provide comprehensive agricultural solutions that support farmers from knowledge and training to inputs, finance, technology, and research. Our goal is to improve productivity, profitability, and sustainability while making farmers more resilient and prosperous.",
+  description:
+    "We provide comprehensive agricultural solutions that support farmers, agro-dealers, investors, and partners across the value chain.",
   backgroundImage: "/img/service/tree-background.png",
   cards: [
     {
       id: "farmer-advisory",
       slug: "farmer-advisory",
-  icon: "FaUserGraduate",
-      emoji: "👩🏾‍🌾",
+      icon: "FaUserGraduate",
       title: "Farmer Advisory & Training",
       shortDescription: "Empowering farmers with knowledge and skills.",
-      description: "We provide farmers with practical, tailored advice and hands-on training to improve productivity, profitability, and resilience. Our advisory services bridge the gap between agricultural research and everyday farming practices.",
-  href: `/services/farmer-advisory`,
-      features: [
-        "Tailored Agronomic Advice",
-        "Farm Financial Management Training", 
-        "Capacity-Building Workshops",
-        "Climate-Smart & Agroecological Practices"
-      ],
-  bgColor: "from-green-500 to-emerald-500",
-      category: "Training & Education"
+      description:
+        "Tailored training and advice for farmers to improve productivity, profitability, and resilience.",
+      href: `/services/farmers/farmer-advisory`,
+      category: "farmers" as ServiceCategory,
+      bgColor: "from-green-500 to-emerald-500",
     },
     {
       id: "agro-inputs",
       slug: "agro-inputs",
-  icon: "FaSeedling",
-      emoji: "🌾",
+      icon: "FaSeedling",
       title: "Agro-Inputs Supply",
       shortDescription: "Reliable inputs for higher yields.",
-      description: "We provide farmers with high-quality agricultural inputs that boost productivity and ensure sustainable farming practices. Our agro-input supply system guarantees timely access to fertilizers, seeds, and crop protection products tailored to local needs.",
-  href: `/services/agro-inputs`,
-      features: [
-        "Organic & Inorganic Fertilizers",
-        "High-quality Climate-resilient Seeds",
-        "Crop Protection Products",
-        "Timely Supply Chain"
-      ],
-  bgColor: "from-green-500 to-emerald-500",
-      category: "Input Supply"
+      description:
+        "High-quality fertilizers, seeds, and crop protection products for sustainable farming.",
+      href: `/services/farmers/agro-inputs`,
+      category: "farmers" as ServiceCategory,
+      bgColor: "from-green-500 to-emerald-500",
     },
     {
       id: "credit-loans",
       slug: "credit-loans",
-  icon: "FaCreditCard",
-      emoji: "💳",
+      icon: "FaCreditCard",
       title: "Access to Credit & Agro-Input Loans",
-      shortDescription: "Affordable input financing for organized farmer groups.",
-      description: "We empower farmers to increase productivity by improving access to credit and agro-inputs. Through partnerships with banks and cooperatives, we provide organized farmer groups with loans in the form of fertilizers and seeds.",
-  href: `/services/credit-loans`,
-      features: [
-        "Group-Based Agro-Input Loans",
-        "Financial Partnerships with Banks",
-        "Farmer Profiling for Risk Reduction",
-        "Financial Literacy Training"
-      ],
-  bgColor: "from-green-500 to-emerald-500",
-      category: "Finance & Credit"
+      shortDescription: "Affordable input financing for farmer groups.",
+      description:
+        "Input loans and financial literacy programs for organized farmers and cooperatives.",
+      href: `/services/farmers/credit-loans`,
+      category: "farmers" as ServiceCategory,
+      bgColor: "from-green-500 to-emerald-500",
     },
     {
       id: "soil-health",
       slug: "soil-health",
-  icon: "FaFlask",
-      emoji: "🧪",
+      icon: "FaFlask",
       title: "Soil Health & Measurement",
       shortDescription: "Know your soil, grow better.",
-      description: "We help farmers make informed decisions by providing accurate soil testing and fertility assessments. Our services ensure that farmers understand their soil conditions and apply the right practices to maximize productivity.",
-  href: `/services/soil-health`,
-      features: [
-        "Soil Testing & Fertility Analysis",
-        "Fertility Mapping",
-        "Soil Improvement Recommendations",
-        "Environmental Protection Guidance"
-      ],
-  bgColor: "from-green-500 to-emerald-500",
-      category: "Soil Management"
+      description:
+        "Accurate soil testing and fertility assessments to optimize land productivity.",
+      href: `/services/farmers/soil-health`,
+      category: "farmers" as ServiceCategory,
+      bgColor: "from-green-500 to-emerald-500",
     },
     {
       id: "irrigation-systems",
       slug: "irrigation-systems",
-  icon: "FaTint",
-      emoji: "💧",
+      icon: "FaTint",
       title: "Irrigation Systems",
       shortDescription: "Smart water management solutions.",
-      description: "We design and install efficient irrigation systems that save water, improve crop performance, and reduce costs. Our team provides end-to-end support, from consultancy and design to installation and maintenance.",
-  href: `/services/irrigation-systems`,
-      features: [
-        "Consultancy & System Design",
-        "Drip & Sprinkler Installation",
-        "Water Use Optimization",
-        "Operation & Maintenance Services"
-      ],
-  bgColor: "from-green-500 to-emerald-500",
-      category: "Water Management"
+      description:
+        "Efficient irrigation systems that improve yields while conserving water.",
+      href: `/services/farmers/irrigation-systems`,
+      category: "farmers" as ServiceCategory,
+      bgColor: "from-green-500 to-emerald-500",
     },
     {
       id: "research-data",
       slug: "research-data",
-  icon: "FaChartBar",
-      emoji: "🔬",
+      icon: "FaChartBar",
       title: "Research & Farmer Data Systems",
       shortDescription: "Turning data into actionable insights.",
-      description: "We collect and analyze real-time data on farmers to improve decision-making, deliver tailored advice, and build farmer profiles that enhance bankability. By combining agronomic monitoring and financial analysis, we empower farmers with evidence-based insights.",
-  href: `/services/research-data`,
-      features: [
-        "Farmer Profiling & Asset Recording",
-        "Agronomic Monitoring",
-        "Financial & Credit Analysis",
-        "On-Field Experiments & Testing"
-      ],
-  bgColor: "from-green-500 to-emerald-500",
-      category: "Research & Analytics"
+      description:
+        "Farmer profiling, data collection, and analytics for smarter agriculture.",
+      href: `/services/partners/research-data`,
+      category: "partners" as ServiceCategory,
+      bgColor: "from-green-500 to-emerald-500",
     },
     {
       id: "information-access",
       slug: "information-access",
-  icon: "FaRadio",
-      emoji: "📡",
+      icon: "FaRadio",
       title: "Access to Information & Linkages",
       shortDescription: "Bringing knowledge closer to farmers.",
-      description: "We improve farmers' access to vital agricultural information through innovative, localized channels. By combining farm radio programs, mobile information centers, and partnerships with trained agro-dealers, we ensure farmers receive practical, timely advice.",
-  href: `/services/information-access`,
-      features: [
-        "Farm Radio Programs",
-        "Mobile & Local Information Centers",
-        "Agro-Dealer Training",
-        "Localized Exhibitions & Events"
-      ],
-  bgColor: "from-green-500 to-emerald-500",
-      category: "Information & Communication"
+      description:
+        "Information services via radio, mobile, and local partnerships.",
+      href: `/services/partners/information-access`,
+      category: "partners" as ServiceCategory,
+      bgColor: "from-green-500 to-emerald-500",
     },
     {
       id: "investment-management",
       slug: "investment-management",
-  icon: "FaHandshake",
-      emoji: "🌍",
+      icon: "FaHandshake",
       title: "Agricultural Investment & Farm Management",
-      shortDescription: "Supporting investors to succeed in Tanzanian agriculture.",
-      description: "We provide end-to-end support for investors looking to develop agricultural projects in the Southern Highlands of Tanzania. From legal land access to on-site consultancy and farm management, we ensure investments are compliant and productive.",
-  href: `/services/investment-management`,
-      features: [
-        "Land Access & Legal Support",
-        "Onsite Consultancy",
-        "Day-to-day Farm Management",
-        "Southern Highlands Expertise"
-      ],
-  bgColor: "from-green-500 to-emerald-500",
-      category: "Investment & Management"
-    }
-  ]
+      shortDescription: "Supporting investors to succeed in agriculture.",
+      description:
+        "Full-cycle support for investors: land access, consultancy, and farm management.",
+      href: `/services/investors/investment-management`,
+      category: "investors" as ServiceCategory,
+      bgColor: "from-green-500 to-emerald-500",
+    },
+  ],
 };
-

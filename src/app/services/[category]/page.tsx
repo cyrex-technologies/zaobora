@@ -7,7 +7,7 @@ import {
   AgroDealersTemplate,
   PartnersTemplate,
   InvestorsTemplate,
-} from "@/components/categories/CategoryTemplates";
+} from "@/components/ui/CategoryTemplates";
 
 export default function CategoryPage({
   params,
@@ -20,7 +20,7 @@ export default function CategoryPage({
   if (!category) return notFound();
 
   const relatedServices = SERVICES_CONTENT.cards.filter(
-    (service) => service.categoryGroup === categoryKey
+    (service) => (service as any).categoryGroup === categoryKey
   );
 
   switch (categoryKey) {
