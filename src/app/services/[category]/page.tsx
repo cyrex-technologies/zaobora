@@ -2,6 +2,7 @@
 import { notFound } from "next/navigation";
 import { SERVICE_CATEGORIES } from "@/lib/constants/service-categories";
 import { SERVICES_CONTENT } from "@/lib/constants/service-list";
+import { ServiceCardType } from "@/types/service";
 import {
   FarmersTemplate,
   AgroDealersTemplate,
@@ -20,7 +21,7 @@ export default function CategoryPage({
   if (!category) return notFound();
 
   const relatedServices = SERVICES_CONTENT.cards.filter(
-    (service) => (service as any).categoryGroup === categoryKey
+    (service: ServiceCardType) => service.category === categoryKey
   );
 
   switch (categoryKey) {

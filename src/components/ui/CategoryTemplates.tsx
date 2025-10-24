@@ -3,7 +3,12 @@
 
 import React from "react";
 import * as FaIcons from "react-icons/fa6";
+import { IconType } from "react-icons";
 import Link from "next/link";
+
+type FaIconsType = {
+  [key: string]: IconType;
+};
 
 type CategoryType = {
   id: string;
@@ -37,15 +42,18 @@ interface TemplateProps {
 }
 
 const SectionIcon = ({ name }: { name: string }) => {
-  const Icon = (FaIcons as any)[name];
+  const Icon = (FaIcons as FaIconsType)[name];
   return Icon ? <Icon className="text-green-600 text-3xl" /> : null;
 };
 
 const Hero = ({ category }: { category: CategoryType }) => (
-  <section
-    className="relative text-center bg-cover bg-center py-24 text-white"
-    style={{ backgroundImage: `url(${category.hero.image})` }}
-  >
+  <section className="relative text-center bg-cover bg-center py-24 text-white">
+    {/* Using inline style for dynamic image from data */}
+    <div 
+      className="absolute inset-0 bg-cover bg-center" 
+      style={{ backgroundImage: `url(${category.hero.image})` }} 
+      aria-hidden="true"
+    />
     <div className="absolute inset-0 bg-black/50" />
     <div className="relative z-10 container mx-auto px-4">
       <h1 className="text-4xl font-bold mb-4">{category.title}</h1>
@@ -99,7 +107,7 @@ const RelatedServices = ({ services }: { services: ServiceType[] }) => (
 
     <div className="container mx-auto grid gap-6 px-4 md:grid-cols-2 lg:grid-cols-3">
       {services.map((s) => {
-        const Icon = (FaIcons as any)[s.icon];
+        const Icon = (FaIcons as FaIconsType)[s.icon];
         return (
           <div
             key={s.id}
