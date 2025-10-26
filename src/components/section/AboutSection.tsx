@@ -126,7 +126,10 @@ const AboutSection = () => {
 
               {/* Description */}
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                {ABOUT_CONTENT.description}
+                {ABOUT_CONTENT.description1}
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                {ABOUT_CONTENT.description2}
               </p>
             </div>
 
