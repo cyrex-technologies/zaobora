@@ -129,7 +129,7 @@ const SuccessStories = ({
         </div>
 
         {/* View All Button */}
-        {!showAll && stories.length > 3 && (
+        {/* {!showAll && stories.length > 3 && (
           <div className="text-center mt-12">
             <Link 
               href="/services/farmers"
@@ -139,7 +139,7 @@ const SuccessStories = ({
               <FaArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>
-        )}
+        )} */}
       </div>
     </section>
   );
