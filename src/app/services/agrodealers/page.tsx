@@ -9,73 +9,105 @@ export default function AgroDealersPage() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative pt-20 md:pt-24 pb-16 md:pb-20 bg-gradient-to-br from-green-50 via-white to-emerald-50 overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-green-200/20 rounded-full animate-pulse" />
-          <div className="absolute bottom-20 right-20 w-24 h-24 bg-emerald-200/30 rounded-full animate-bounce" />
-          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-emerald-200/20 rounded-full animate-ping" />
+      {/* Hero Section with Full Background */}
+      <section className="relative pt-20 md:pt-24 pb-16 md:pb-20 overflow-hidden min-h-screen flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={SERVICE_CATEGORIES.agrodealers.hero.image}
+            alt="Agro-dealer business"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-green-900/70" />
+        </div>
+
+        {/* Animated decorative elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-green-400/10 rounded-full animate-pulse" />
+          <div className="absolute bottom-20 right-20 w-24 h-24 bg-emerald-400/20 rounded-full animate-bounce" />
+          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-emerald-400/15 rounded-full animate-ping" />
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            
+          <div className="max-w-4xl">
             {/* Content */}
-            <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium mb-6">
-                <FaStore className="w-4 h-4" />
-                <span>{category.title}</span>
-              </div>
-              
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                <span className="block">Grow Your Business</span>
-                <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                  with Zao Bora
-                </span>
-              </h1>
-              
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                {category.hero.headline}
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href={category.hero.cta[0].href}
-                  className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-green-600 to-emerald-600 
-                           text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl 
-                           transform hover:scale-105 transition-all duration-300"
-                >
-                  <span>{category.hero.cta[0].label}</span>
-                  <FaArrowRight className="w-5 h-5" />
-                </Link>
-              </div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/90 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6">
+              <FaStore className="w-4 h-4" />
+              <span>{category.title}</span>
             </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+              <span className="block">Grow Your Business</span>
+              <span className="bg-gradient-to-r from-green-400 to-emerald-300 bg-clip-text text-transparent">
+                with Zao Bora
+              </span>
+            </h1>
+            
+            <p className="text-xl text-white/95 mb-8 leading-relaxed drop-shadow-lg max-w-2xl">
+              {category.hero.headline}
+            </p>
 
-            {/* Hero Image */}
-            <div className="relative">
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                <Image
-                  src="/assets/img/agrodealers/agro-shop.jpg"
-                  alt="Agro-dealer business"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/20 via-transparent to-transparent" />
-              </div>
-              
-              {/* Floating Business Badge */}
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4 border border-emerald-100">
+            {/* Stats Cards */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <FaChartLine className="w-6 h-6 text-green-600" />
+                  <div className="w-10 h-10 bg-green-500/90 rounded-lg flex items-center justify-center">
+                    <FaUsers className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-gray-900">+35%</div>
-                    <div className="text-sm text-gray-600">Sales Growth</div>
+                    <div className="text-2xl font-bold text-white">10K+</div>
+                    <div className="text-xs text-white/80">Farmers</div>
                   </div>
                 </div>
               </div>
+
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-green-500/90 rounded-lg flex items-center justify-center">
+                    <FaChartLine className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-white">+35%</div>
+                    <div className="text-xs text-white/80">Sales Growth</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 col-span-2 md:col-span-1">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-green-500/90 rounded-lg flex items-center justify-center">
+                    <FaHandshake className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-white">250+</div>
+                    <div className="text-xs text-white/80">Partner Dealers</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href={category.hero.cta[0].href}
+                className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-green-600 to-emerald-600 
+                         text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl 
+                         transform hover:scale-105 transition-all duration-300"
+              >
+                <span>{category.hero.cta[0].label}</span>
+                <FaArrowRight className="w-5 h-5" />
+              </Link>
+
+              <Link
+                href="/agrodealers/benefits"
+                className="inline-flex items-center justify-center gap-3 bg-white/20 backdrop-blur-sm 
+                         text-white border-2 border-white/30 px-8 py-4 rounded-xl font-semibold 
+                         hover:bg-white/30 transition-all duration-300"
+              >
+                <span>Learn More</span>
+              </Link>
             </div>
           </div>
         </div>
@@ -147,7 +179,7 @@ export default function AgroDealersPage() {
       </section>
 
       {/* How It Works Section */}
-  <section className="py-20 bg-gradient-to-br from-green-50 to-emerald-50">
+      <section className="py-20 bg-gradient-to-br from-green-50 to-emerald-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -161,7 +193,7 @@ export default function AgroDealersPage() {
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-3 gap-8 relative">
               {/* Connecting Lines */}
-  <div className="hidden md:block absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-green-300 via-emerald-300 to-emerald-300" />
+              <div className="hidden md:block absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-green-300 via-emerald-300 to-emerald-300" />
               
               {[
                 {
@@ -226,7 +258,7 @@ export default function AgroDealersPage() {
             </p>
           </div>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 border-l-4 border-green-500 shadow-lg">
               <div className="flex items-start gap-4 mb-6">
                 <div className="text-4xl text-green-500">&ldquo;</div>
@@ -381,7 +413,7 @@ export default function AgroDealersPage() {
                       type="email"
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
-                               focus:ring-2 focus:ring-orange-500 bg-white"
+                               focus:ring-2 focus:ring-green-500 bg-white"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -395,7 +427,7 @@ export default function AgroDealersPage() {
                     type="text"
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
-                             focus:ring-2 focus:ring-orange-500 bg-white"
+                             focus:ring-2 focus:ring-green-500 bg-white"
                     placeholder="City, Region"
                   />
                 </div>
@@ -427,7 +459,7 @@ export default function AgroDealersPage() {
       </section>
 
       {/* Final CTA */}
-  <section className="py-20 bg-gradient-to-r from-green-600 to-emerald-600">
+      <section className="py-20 bg-gradient-to-r from-green-600 to-emerald-600">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Grow Your Agro-Input Business?

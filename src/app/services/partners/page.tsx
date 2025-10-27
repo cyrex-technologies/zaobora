@@ -9,73 +9,82 @@ export default function PartnersPage() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative pt-20 md:pt-24 pb-16 md:pb-20 bg-gradient-to-br from-green-50 via-white to-emerald-50 overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-green-200/20 rounded-full animate-pulse" />
-          <div className="absolute bottom-20 right-20 w-24 h-24 bg-emerald-200/30 rounded-full animate-bounce" />
-          <div className="absolute top-1/2 right-1/4 w-16 h-16 bg-emerald-200/20 rounded-full animate-ping" />
+      {/* Hero Section with Full Background */}
+      <section className="relative pt-20 md:pt-24 pb-16 md:pb-20 overflow-hidden min-h-screen flex items-center ">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={category.hero.image}
+            alt="Partnership collaboration"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-emerald-900/60 to-black/70" />
+        </div>
+
+        {/* Animated decorative elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-emerald-400/10 rounded-full animate-pulse" />
+          <div className="absolute bottom-20 right-20 w-24 h-24 bg-green-400/20 rounded-full animate-bounce" />
+          <div className="absolute top-1/2 right-1/4 w-16 h-16 bg-emerald-400/15 rounded-full animate-ping" />
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            
+          <div className="max-w-4xl mx-auto text-center">
             {/* Content */}
-            <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium mb-6">
-                <FaHandshake className="w-4 h-4" />
-                <span>{category.title}</span>
-              </div>
-              
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                <span className="block">Collaborate for</span>
-                <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                  Lasting Impact
-                </span>
-              </h1>
-              
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                {category.hero.headline}
-              </p>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/90 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6">
+              <FaHandshake className="w-4 h-4" />
+              <span>{category.title}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+              <span className="block">Collaborate for</span>
+              <span className="bg-gradient-to-r from-emerald-300 to-green-300 bg-clip-text text-transparent">
+                Lasting Impact
+              </span>
+            </h1>
+            
+            <p className="text-xl text-white/95 mb-8 leading-relaxed drop-shadow-lg max-w-3xl mx-auto">
+              {category.hero.headline}
+            </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href={category.hero.cta[0].href}
-                  className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-green-600 to-emerald-600 
-                           text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl 
-                           transform hover:scale-105 transition-all duration-300"
-                >
-                  <span>{category.hero.cta[0].label}</span>
-                  <FaArrowRight className="w-5 h-5" />
-                </Link>
+            {/* Partnership Stats */}
+            <div className="grid grid-cols-3 gap-4 md:gap-6 mb-10 max-w-2xl mx-auto">
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
+                <div className="text-3xl md:text-4xl font-bold text-white mb-1">10+</div>
+                <div className="text-xs md:text-sm text-white/80">Active Partners</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
+                <div className="text-3xl md:text-4xl font-bold text-white mb-1">50K+</div>
+                <div className="text-xs md:text-sm text-white/80">Farmers Reached</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
+                <div className="text-3xl md:text-4xl font-bold text-white mb-1">15+</div>
+                <div className="text-xs md:text-sm text-white/80">Projects</div>
               </div>
             </div>
 
-            {/* Hero Image */}
-            <div className="relative">
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                <Image
-                  src="/assets/img/partners/partnership.jpg"
-                  alt="Partnership collaboration"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/20 via-transparent to-transparent" />
-              </div>
-              
-              {/* Floating Stats Badge */}
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4 border border-emerald-100">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center">
-                    <FaUsers className="w-6 h-6 text-emerald-600" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-gray-900">10+</div>
-                    <div className="text-sm text-gray-600">Active Partnerships</div>
-                  </div>
-                </div>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href={category.hero.cta[0].href}
+                className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-600 to-green-600 
+                         text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl 
+                         transform hover:scale-105 transition-all duration-300"
+              >
+                <span>{category.hero.cta[0].label}</span>
+                <FaArrowRight className="w-5 h-5" />
+              </Link>
+
+              <Link
+                href="/partners/opportunities"
+                className="inline-flex items-center justify-center gap-3 bg-white/20 backdrop-blur-sm 
+                         text-white border-2 border-white/30 px-8 py-4 rounded-xl font-semibold 
+                         hover:bg-white/30 transition-all duration-300"
+              >
+                <span>View Opportunities</span>
+              </Link>
             </div>
           </div>
         </div>

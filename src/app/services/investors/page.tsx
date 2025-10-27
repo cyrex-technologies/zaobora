@@ -1,6 +1,8 @@
 // src/app/investors/page.tsx
+import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight, FaDownload, FaLeaf } from "react-icons/fa6";
+import { SERVICE_CATEGORIES } from "@/lib/constants/service-categories";
 // Header and Footer moved to route layout
 
 export default function InvestorsPage() {
@@ -8,22 +10,68 @@ export default function InvestorsPage() {
   return (
     <>
 
-      {/* Hero Section */}
-      <section className="relative pt-20 md:pt-24 pb-16 md:pb-20 bg-gradient-to-br from-green-50 via-white to-emerald-50 overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-green-200/20 rounded-full animate-pulse" />
-          <div className="absolute bottom-20 right-20 w-24 h-24 bg-emerald-200/30 rounded-full animate-bounce" />
-          <div className="absolute top-1/2 right-1/4 w-16 h-16 bg-emerald-200/20 rounded-full animate-ping" />
+      {/* Hero Section with Full Background */}
+      <section className="relative pt-20 md:pt-24 pb-16 md:pb-20 overflow-hidden min-h-screen flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={SERVICE_CATEGORIES.investors.hero.image}
+            alt="Sustainable Agriculture Investment"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Overlay for better form readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-green-900/70" />
         </div>
 
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Animated decorative elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-green-400/10 rounded-full animate-pulse" />
+          <div className="absolute bottom-20 right-20 w-24 h-24 bg-emerald-400/20 rounded-full animate-bounce" />
+          <div className="absolute top-1/2 right-1/4 w-16 h-16 bg-emerald-400/15 rounded-full animate-ping" />
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             
-            {/* Content */}
-            <div>
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl shadow-xl p-8 md:p-12">
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+            {/* Left Content */}
+            <div className="text-white">
+              <div className="inline-block px-4 py-2 bg-green-500/90 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
+                Investment Opportunities
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-2xl">
+                Invest in Africa&apos;s Agricultural Future
+              </h1>
+              
+              <p className="text-xl text-white/95 mb-8 leading-relaxed drop-shadow-lg">
+                Partner with us to scale regenerative farming practices across Tanzania, creating sustainable value for farmers, communities, and the environment.
+              </p>
+
+              <div className="flex flex-wrap gap-4 mb-8">
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                  <span className="text-2xl">🌱</span>
+                  <span className="text-sm font-medium">10,000+ Farmers</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                  <span className="text-2xl">📊</span>
+                  <span className="text-sm font-medium">Proven Impact</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                  <span className="text-2xl">🎯</span>
+                  <span className="text-sm font-medium">SDG Aligned</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Form */}
+            <div className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl p-8 md:p-10 border border-white/20">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Request Investor Information</h3>
+              <p className="text-gray-600 mb-6">Let's explore how we can work together</p>
+              
+              <form className="space-y-5">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name *
@@ -50,7 +98,7 @@ export default function InvestorsPage() {
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Email *
@@ -84,7 +132,7 @@ export default function InvestorsPage() {
                     id="investmentInterest"
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
-                             focus:ring-2 focus:ring-indigo-500 bg-white"
+                             focus:ring-2 focus:ring-green-500 bg-white"
                   >
                     <option value="">Select your interest</option>
                     <option value="program-funding">Program Funding</option>
@@ -99,7 +147,7 @@ export default function InvestorsPage() {
                     Message
                   </label>
                   <textarea
-                    rows={5}
+                    rows={4}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
                              focus:ring-2 focus:ring-green-500 resize-none bg-white"
                     placeholder="Tell us about your investment goals and how you'd like to support our mission..."
@@ -119,11 +167,10 @@ export default function InvestorsPage() {
             </div>
           </div>
         </div>
-      </div>
       </section>
 
       {/* Why Invest Section */}
-  <section className="py-20 bg-gradient-to-br from-gray-900 via-green-900 to-emerald-900 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-green-900 to-emerald-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10" />
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

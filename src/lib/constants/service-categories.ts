@@ -41,7 +41,7 @@ export const SERVICE_CATEGORIES: Record<ServiceCategory, CategoryInfo> = {
     hero: {
       headline:
         "Empowering farmers with tools, knowledge, and opportunities to thrive.",
-      image: "/img/categories/farmers-hero.jpg",
+      image: "/img/hero/zaoborafarmerempowerment.webp",
       cta: [
         { label: "Explore Services", href: "/services/farmers" },
         { label: "Join Us", href: "/contact" },
@@ -114,7 +114,7 @@ export const SERVICE_CATEGORIES: Record<ServiceCategory, CategoryInfo> = {
     hero: {
       headline:
         "Partnering with agri-dealers to build stronger local supply chains.",
-      image: "/img/categories/agrodealers-hero.jpg",
+      image: "/img/hero/zaoboraagriinpunts.webp",
       cta: [
         { label: "Join Our Network", href: "/contact" },
         { label: "Explore Services", href: "/services/agrodealers" },
@@ -155,7 +155,7 @@ export const SERVICE_CATEGORIES: Record<ServiceCategory, CategoryInfo> = {
     hero: {
       headline:
         "We collaborate with organizations and institutions to accelerate agricultural transformation.",
-      image: "/img/categories/partners-hero.jpg",
+      image: "/img/hero/zaoboracallforpartners.webp",
       cta: [
         { label: "Become a Partner", href: "/get-involved/partnership" },
         { label: "Explore Services", href: "/services/partners" },
@@ -216,7 +216,7 @@ export const SERVICE_CATEGORIES: Record<ServiceCategory, CategoryInfo> = {
     hero: {
       headline:
         "Comprehensive support for investors developing agri-projects in Tanzania.",
-      image: "/img/categories/investors-hero.jpg",
+      image: "/img/hero/zaoboracallforinvestors.webp",
       cta: [
         { label: "Start Investing", href: "/contact" },
         { label: "View Opportunities", href: "/services/investors" },

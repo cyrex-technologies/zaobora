@@ -8,55 +8,53 @@ export default function FarmersPage() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative pt-20 md:pt-24 pb-16 md:pb-20 bg-gradient-to-br from-green-50 via-white to-emerald-50 overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-green-200/20 rounded-full animate-pulse" />
-          <div className="absolute bottom-20 right-20 w-24 h-24 bg-emerald-200/30 rounded-full animate-bounce" />
+      {/* Hero Section with Full Background Image */}
+      <section className="relative pt-20 md:pt-24 pb-16 md:pb-20 overflow-hidden min-h-screen flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={category.hero.image}
+            alt={category.title}
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
+        </div>
+
+        {/* Animated decorative elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-green-400/10 rounded-full animate-pulse" />
+          <div className="absolute bottom-20 right-20 w-24 h-24 bg-emerald-400/20 rounded-full animate-bounce" />
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            
+          <div className="max-w-3xl">
             {/* Content */}
-            <div>
-              <div className="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium mb-6">
-                {category.title}
-              </div>
-              
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                {category.tagline}
-              </h1>
-              
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                {category.hero.headline}
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                {category.hero.cta.map((cta, index) => (
-                  <Link
-                    key={index}
-                    href={cta.href}
-                    className={`inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ${index === 0 ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white' : 'bg-white text-green-600 border-2 border-green-200 hover:border-green-300'}`}
-                  >
-                    <span>{cta.label}</span>
-                    <FaArrowRight className="w-5 h-5" />
-                  </Link>
-                ))}
-              </div>
+            <div className="inline-block px-4 py-2 bg-green-500/90 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6">
+              {category.title}
             </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+              {category.tagline}
+            </h1>
+            
+            <p className="text-xl text-white/95 mb-8 leading-relaxed drop-shadow-lg">
+              {category.hero.headline}
+            </p>
 
-            {/* Hero Image */}
-            <div className="relative">
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                <Image
-                  src={category.hero.image}
-                  alt={category.title}
-                  width={600}
-                  height={400}
-                  className="w-full h-auto object-cover"
-                />
-              </div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              {category.hero.cta.map((cta, index) => (
+                <Link
+                  key={index}
+                  href={cta.href}
+                  className={`inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ${index === 0 ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white' : 'bg-white text-green-600 border-2 border-white hover:bg-gray-50'}`}
+                >
+                  <span>{cta.label}</span>
+                  <FaArrowRight className="w-5 h-5" />
+                </Link>
+              ))}
             </div>
           </div>
         </div>
