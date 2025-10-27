@@ -68,7 +68,7 @@ export default function InvestorsPage() {
             {/* Right Form */}
             <div className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl p-8 md:p-10 border border-white/20">
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Request Investor Information</h3>
-              <p className="text-gray-600 mb-6">Let's explore how we can work together</p>
+              <p className="text-gray-600 mb-6">Let&apos;s explore how we can work together</p>
               
               <form className="space-y-5">
                 <div className="grid md:grid-cols-2 gap-4">
