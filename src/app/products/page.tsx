@@ -5,28 +5,25 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight, FaFilter, FaList, FaLeaf, FaSeedling } from "react-icons/fa6";
 import { FaThLarge } from "react-icons/fa";
-import { PRODUCTS } from "@/lib/constants/products";
+import { PRODUCTS, getUniqueCategories } from "@/lib/constants/products";
 import Header from "@/components/layout/header/Header";
 
 export default function ProductsPage() {
   const [isVisible, setIsVisible] = useState(false);
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState("All Products");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [searchTerm, setSearchTerm] = useState("");
   const heroRef = useRef<HTMLElement>(null);
 
-  // ✅ Get unique categories only once
-  const categories = useMemo(
-    () => ["all", ...new Set(PRODUCTS.map((product) => product.category || "Other"))],
-    []
-  );
+  // Get unique categories from products
+  const categories = useMemo(() => getUniqueCategories(), []);
 
-  // ✅ Memoize filtered products to avoid re-creating array each render
+  // Memoize filtered products
   const filteredProducts = useMemo(() => {
     return PRODUCTS.filter((product) => {
       const matchesCategory =
-        selectedCategory === "all" || product.category === selectedCategory;
+        selectedCategory === "All Products" || product.category === selectedCategory;
       const matchesSearch =
         product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         product.description.toLowerCase().includes(searchTerm.toLowerCase());
@@ -34,7 +31,7 @@ export default function ProductsPage() {
     });
   }, [selectedCategory, searchTerm]);
 
-  // ✅ Hero visibility observer
+  // Hero visibility observer
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setIsVisible(entry.isIntersecting),
@@ -45,9 +42,9 @@ export default function ProductsPage() {
     return () => observer.disconnect();
   }, []);
 
-  // ✅ Animate card reveal when filteredProducts changes
+  // Animate card reveal when filteredProducts changes
   useEffect(() => {
-    setVisibleCards([]); // reset
+    setVisibleCards([]);
 
     const timeouts: NodeJS.Timeout[] = [];
     filteredProducts.forEach((_, index) => {
@@ -58,7 +55,7 @@ export default function ProductsPage() {
     });
 
     return () => {
-      timeouts.forEach(clearTimeout); // ✅ cleanup to avoid memory leaks
+      timeouts.forEach(clearTimeout);
     };
   }, [filteredProducts]);
 
@@ -66,7 +63,7 @@ export default function ProductsPage() {
     <div className="min-h-screen bg-white">
       <Header />
 
-      {/* ✅ Hero Section */}
+      {/* Hero Section */}
       <section
         ref={heroRef}
         className="relative pt-20 md:pt-24 pb-16 md:pb-20 bg-gradient-to-br from-green-50 via-white to-emerald-50 overflow-hidden"
@@ -121,9 +118,9 @@ export default function ProductsPage() {
               </h1>
 
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Discover our wide range of farm-fresh products designed to meet your unique needs.
-                From sustainably grown produce to natural delights, every product reflects our
-                commitment to quality and environmental stewardship.
+                Discover our wide range of premium agricultural products — from specialty cash crops 
+                to quality inputs and modern machinery. Every product reflects our commitment to 
+                quality, sustainability, and farmer success.
               </p>
             </div>
 
@@ -134,16 +131,16 @@ export default function ProductsPage() {
               }`}
             >
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-green-600">{PRODUCTS.length}+</div>
+                <div className="text-2xl md:text-3xl font-bold text-green-600">{PRODUCTS.length}</div>
                 <div className="text-sm md:text-base text-gray-600">Products</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-emerald-600">100%</div>
-                <div className="text-sm md:text-base text-gray-600">Natural</div>
+                <div className="text-2xl md:text-3xl font-bold text-emerald-600">{categories.length - 1}</div>
+                <div className="text-sm md:text-base text-gray-600">Categories</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-green-600">Fresh</div>
-                <div className="text-sm md:text-base text-gray-600">Daily</div>
+                <div className="text-2xl md:text-3xl font-bold text-green-600">Quality</div>
+                <div className="text-sm md:text-base text-gray-600">Assured</div>
               </div>
             </div>
           </div>
@@ -151,7 +148,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Search and Filters */}
-      <section className="bg-white border-b border-gray-200 py-6">
+      <section className="bg-white border-b border-gray-200 py-6 sticky top-0 z-40 shadow-sm">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Search Bar */}
@@ -184,11 +181,11 @@ export default function ProductsPage() {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap ${
                     selectedCategory === category
-                      ? 'bg-green-100 text-green-700 border-2 border-green-300'
+                      ? 'bg-green-600 text-white shadow-md'
                       : 'bg-gray-100 text-gray-600 hover:bg-gray-200 border-2 border-transparent'
                   }`}
                 >
-                  {category === 'all' ? 'All Products' : category}
+                  {category}
                 </button>
               ))}
             </div>
@@ -228,7 +225,7 @@ export default function ProductsPage() {
           <div className="mb-8 text-center">
             <p className="text-gray-600">
               Showing <span className="font-semibold text-green-600">{filteredProducts.length}</span> 
-              {selectedCategory === 'all' ? ' products' : ` products in ${selectedCategory}`}
+              {selectedCategory === 'All Products' ? ' products' : ` ${selectedCategory.toLowerCase()}`}
               {searchTerm && ` matching "${searchTerm}"`}
             </p>
           </div>
@@ -272,8 +269,8 @@ export default function ProductsPage() {
                       
                       {/* Category Badge */}
                       <div className="absolute top-4 left-4">
-                        <span className="inline-block px-3 py-1 bg-green-100/90 backdrop-blur-sm text-green-700 rounded-full text-xs font-medium">
-                          {product.category || 'Product'}
+                        <span className="inline-block px-3 py-1 bg-green-600/90 backdrop-blur-sm text-white rounded-full text-xs font-medium">
+                          {product.category}
                         </span>
                       </div>
 
@@ -283,18 +280,18 @@ export default function ProductsPage() {
                     </div>
 
                     {/* Content */}
-                    <div className="relative z-10 p-6 flex flex-col h-full">
+                    <div className="relative z-10 p-6 flex flex-col">
                       <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-700 
                                    transition-colors duration-300 line-clamp-2">
                         {product.title}
                       </h3>
 
-                      <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3 flex-grow">
+                      <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
                         {product.description}
                       </p>
 
                       {/* CTA */}
-                      <div className="mt-auto">
+                      <div className="mt-auto pt-4">
                         <span className="inline-flex items-center gap-2 text-green-600 font-semibold 
                                        transition-all duration-300 group-hover:gap-3">
                           <span>Learn More</span>
@@ -330,7 +327,7 @@ export default function ProductsPage() {
                             />
                           </div>
                           <span className="inline-block px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">
-                            {product.category || 'Product'}
+                            {product.category}
                           </span>
                         </div>
 
@@ -384,7 +381,7 @@ export default function ProductsPage() {
                   </button>
                 )}
                 <button
-                  onClick={() => setSelectedCategory('all')}
+                  onClick={() => setSelectedCategory('All Products')}
                   className="bg-gray-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-700 transition-colors duration-300"
                 >
                   View All Products
@@ -402,7 +399,7 @@ export default function ProductsPage() {
             Interested in Our Products?
           </h2>
           <p className="text-base md:text-lg lg:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Get in touch with us to learn more about our farm-fresh products and how we can meet your needs.
+            Get in touch with us to learn more about our products and how we can meet your agricultural needs.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -423,11 +420,6 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
-
     </div>
-    
   );
 }
-
-
-      
