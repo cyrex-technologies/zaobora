@@ -1,11 +1,11 @@
 // src/lib/constants/service-categories.ts
 import { ServiceCategory } from '@/types/service';
 
-// export interface CategoryHero {
-//   headline: string;
-//   image: string;
-//   cta: Array<{ label: string; href: string }>;
-// }
+export interface CategoryHero {
+  headline: string;
+  image: string;
+  cta: Array<{ label: string; href?: string; type?: "link" | "modal" }>;
+}
 
 // export interface CategorySection {
 //   id: string;
@@ -25,23 +25,17 @@ import { ServiceCategory } from '@/types/service';
 //   cta?: { label: string; href: string };
 // }
 
-// export interface CategoryInfo {
-//   id: ServiceCategory;
-//   title: string;
-//   tagline: string;
-//   hero: CategoryHero;
-//   sections: CategorySection[];
-// }
+export interface CategoryInfo {
+  id: ServiceCategory;
+  title: string;
+  tagline: string;
+  hero: CategoryHero;
+  sections: CategorySection[];
+}
 export interface CTA {
   label: string;
   href?: string; // used for links
   type?: "link" | "modal"; // added new field for modals
-}
-
-export interface CategoryHero {
-  headline: string;
-  image: string;
-  cta: CTA[];
 }
 
 export interface CategorySection {
@@ -62,13 +56,13 @@ export interface CategorySection {
   cta?: CTA;
 }
 
-export interface CategoryInfo {
-  id: string;
-  title: string;
-  tagline: string;
-  hero: CategoryHero;
-  sections: CategorySection[];
-}
+// export interface CategoryInfo {
+//   id: string;
+//   title: string;
+//   tagline: string;
+//   hero: CategoryHero;
+//   sections: CategorySection[];
+// }
 
 export const SERVICE_CATEGORIES: Record<ServiceCategory, CategoryInfo> = {
   farmers: {
