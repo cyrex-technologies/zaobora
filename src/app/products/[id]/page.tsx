@@ -3,9 +3,12 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { FaArrowLeft, FaArrowRight, FaCheck } from "react-icons/fa6";
 import { PRODUCTS } from "@/lib/constants/products";
 import Header from "@/components/layout/header/Header";
+import ProductContactModal from "@/components/ui/ProductContactModal";
+
 
 // Page Props
 interface ProductPageProps {
@@ -14,6 +17,8 @@ interface ProductPageProps {
 
 export default function ProductDetailPage({ params }: ProductPageProps) {
   const product = PRODUCTS.find((p) => p.id === params.id);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+  
 
   if (!product) return notFound();
 
@@ -138,15 +143,17 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Link
-                  href="/contact"
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  
+                  
                   className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-green-600 to-emerald-600 
                            text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl 
                            transform hover:scale-105 transition-all duration-300"
                 >
                   <span>Get in Touch</span>
                   <FaArrowRight className="w-5 h-5" />
-                </Link>
+                </button>
                 
                 <Link
                   href="/products"
@@ -162,6 +169,8 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
           </div>
         </div>
       </section>
+      {/* ✅ Modal Component */}
+      <ProductContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
       {/* Related Products Section */}
       {relatedProducts.length > 0 && (

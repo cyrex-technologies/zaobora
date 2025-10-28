@@ -1,11 +1,16 @@
 // src/app/agrodealers/page.tsx
+'use client'
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { FaArrowRight, FaCheck, FaStore, FaChartLine, FaHandshake, FaUsers, FaSeedling } from "react-icons/fa6";
 import { SERVICE_CATEGORIES } from "@/lib/constants/service-categories";
+import LeadCaptureModal from "@/components/ui/LeadCaptureModal";
 
 export default function AgroDealersPage() {
   const category = SERVICE_CATEGORIES.agrodealers;
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   return (
     <>
@@ -90,28 +95,31 @@ export default function AgroDealersPage() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href={category.hero.cta[0].href}
+              <button
+                // href={category.hero.cta[0].href}
+                onClick={() => setIsModalOpen(true)}
                 className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-green-600 to-emerald-600 
                          text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl 
                          transform hover:scale-105 transition-all duration-300"
               >
                 <span>{category.hero.cta[0].label}</span>
                 <FaArrowRight className="w-5 h-5" />
-              </Link>
+              </button>
 
-              <Link
+              {/* <Link
                 href="/agrodealers/benefits"
                 className="inline-flex items-center justify-center gap-3 bg-white/20 backdrop-blur-sm 
                          text-white border-2 border-white/30 px-8 py-4 rounded-xl font-semibold 
                          hover:bg-white/30 transition-all duration-300"
               >
                 <span>Learn More</span>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
       </section>
+      {/*  Lead Capture Modal */}
+      <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
       {/* Why Work With Us Section */}
       <section className="py-20 bg-white">
@@ -165,7 +173,7 @@ export default function AgroDealersPage() {
           </div>
 
           <div className="text-center">
-            <Link
+            {/* <Link
               href="/agrodealers/register"
               className="inline-flex items-center gap-3 bg-gradient-to-r from-green-600 to-emerald-600 
                        text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl 
@@ -173,7 +181,7 @@ export default function AgroDealersPage() {
             >
               <span>Register as a Partner Dealer</span>
               <FaArrowRight className="w-5 h-5" />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
@@ -233,7 +241,7 @@ export default function AgroDealersPage() {
           </div>
 
           <div className="text-center mt-12">
-            <Link
+            {/* <Link
               href="/agrodealers/join"
               className="inline-flex items-center gap-3 bg-gradient-to-r from-green-600 to-emerald-600 
                        text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl 
@@ -241,7 +249,7 @@ export default function AgroDealersPage() {
             >
               <span>Join Today</span>
               <FaArrowRight className="w-5 h-5" />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
@@ -351,7 +359,7 @@ export default function AgroDealersPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
@@ -456,10 +464,10 @@ export default function AgroDealersPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-r from-green-600 to-emerald-600">
+      {/* <section className="py-20 bg-gradient-to-r from-green-600 to-emerald-600">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Grow Your Agro-Input Business?
@@ -489,7 +497,7 @@ export default function AgroDealersPage() {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

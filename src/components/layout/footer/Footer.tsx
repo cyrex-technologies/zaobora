@@ -158,7 +158,7 @@ const Footer = () => {
           </div>
 
           {/* Newsletter Signup */}
-          <div className="mt-12 pt-8 border-t border-gray-700/50">
+          {/* <div className="mt-12 pt-8 border-t border-gray-700/50">
             <div className="text-center max-w-2xl mx-auto">
               <h3 className="text-xl font-semibold mb-3 text-green-400">Stay Updated</h3>
               <p className="text-gray-300 mb-6">
@@ -180,7 +180,7 @@ const Footer = () => {
                 </button>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Bottom Bar */}
           <div className="mt-12 pt-8 border-t border-gray-700/50">

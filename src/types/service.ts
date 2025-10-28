@@ -21,3 +21,32 @@ export interface ServiceCardType {
   backgroundImage: string;
   cards: ServiceCardType[];
 }
+export interface CTA {
+  label: string;
+  href?: string;          // for links
+  type?: "button" | "link"; // new property
+}
+
+export interface CategoryHero {
+  headline: string;
+  image: string;
+  cta: CTA[]; // use new CTA type
+}
+
+export interface CategorySection {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  link: string;
+  content?: string;
+  stats?: Array<{ value: string; label: string }>;
+  reasons?: Array<{ title: string; description: string }>;
+  benefits?: string[];
+  testimonial?: {
+    quote: string;
+    author: string;
+    location: string;
+  };
+  cta?: CTA;
+}

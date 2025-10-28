@@ -44,7 +44,7 @@ export const SERVICE_CATEGORIES: Record<ServiceCategory, CategoryInfo> = {
       image: "/img/hero/zaoborafarmerempowermentcoffee.webp",
       cta: [
         { label: "Explore Services", href: "/services/farmers" },
-        { label: "Join Us", href: "/contact" },
+        { label: "Join Us", type: "modal"},
       ],
     },
     sections: [
@@ -169,7 +169,7 @@ export const SERVICE_CATEGORIES: Record<ServiceCategory, CategoryInfo> = {
         icon: "FaChartLine",
         link: "/impact",
         stats: [
-          { value: "10,000+", label: "Farmers Reached" },
+          { value: "5,000+", label: "Farmers Reached" },
           { value: "15+", label: "Active Projects" },
           { value: "5+", label: "Districts Covered" },
           { value: "$2M+", label: "Project Value" }
