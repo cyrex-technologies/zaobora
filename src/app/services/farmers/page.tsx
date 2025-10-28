@@ -48,7 +48,7 @@ export default function FarmersPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              {category.hero.cta?.map((cta: any, index: number) =>
+              {category.hero.cta?.map((cta, index) =>
                 cta.href ? (
                   <Link
                     key={index}
