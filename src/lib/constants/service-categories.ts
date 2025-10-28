@@ -4,7 +4,7 @@ import { ServiceCategory } from '@/types/service';
 export interface CategoryHero {
   headline: string;
   image: string;
-  cta: Array<{ label: string; href?: string; type?: "link" | "modal" }>;
+  cta: CTA[];
 }
 
 // export interface CategorySection {
@@ -35,7 +35,7 @@ export interface CategoryInfo {
 export interface CTA {
   label: string;
   href?: string; // used for links
-  type?: "link" | "modal"; // added new field for modals
+  type?: "link" | "modal"; 
 }
 
 export interface CategorySection {
