@@ -18,7 +18,7 @@ export const PRODUCTS = [
 Why work with us? Roasters care deeply about origin, flavor, and ethical supply chains. We share your values: fostering fairness, transparency, and high standards. With us, your green coffee is more than a bean, it's a story of quality, integrity, and sustainability.
 
 If you're interested in collaborating or want to see sample farms and roast-ready coffee lots, contact us and we'll get you started.`,
-    image: "/img/products/specialty-coffee.png",
+    image: "/img/products/zaoboraspecialitycoffee.webp",
     category: "Cash Crops",
   },
   {
@@ -54,7 +54,7 @@ If you're interested in collaborating or want to see sample farms and roast-read
     description:
       "Premium sesame seeds valued for their rich flavor and nutritional benefits.",
     detail: "Premium sesame seeds valued for their rich flavor and nutritional benefits. Carefully processed and graded for domestic and international markets.",
-    image: "/img/products/sesame.png",
+    image: "/img/products/zaoborasesamiseeds.webp",
     category: "Cash Crops",
   },
 
@@ -76,7 +76,7 @@ If you're interested in collaborating or want to see sample farms and roast-read
     description:
       "Premium quality hybrid seeds for improved yields and disease resistance.",
     detail: "Verified hybrid seeds sourced from reputable suppliers to ensure optimal germination rates and crop performance. Our seeds are tested and certified for quality assurance.",
-    image: "/img/products/hybrid-seeds.png",
+    image: "/img/products/hybird-seeds.webp",
     category: "Pembejeo",
   },
   {
@@ -85,7 +85,7 @@ If you're interested in collaborating or want to see sample farms and roast-read
     description:
       "Complete range of fertilizers to enhance soil fertility and boost crop productivity.",
     detail: "Quality fertilizers including organic and inorganic options, tailored to different soil types and crop requirements. We provide guidance on proper application for maximum effectiveness.",
-    image: "/img/products/fertilizers.png",
+    image: "/img/products/zaoborafertilizers.webp",
     category: "Pembejeo",
   },
   {
@@ -94,7 +94,7 @@ If you're interested in collaborating or want to see sample farms and roast-read
     description:
       "Effective pest control solutions to protect your crops and maximize yields.",
     detail: "Safe and effective pesticides for controlling common agricultural pests. We offer training on proper usage and safety protocols to ensure both crop protection and environmental responsibility.",
-    image: "/img/products/pesticides.png",
+    image: "/img/products/zaoborapesticides.webp",
     category: "Pembejeo",
   },
   {
@@ -103,7 +103,7 @@ If you're interested in collaborating or want to see sample farms and roast-read
     description:
       "Reliable weed control solutions for cleaner fields and healthier crops.",
     detail: "Professional-grade herbicides for effective weed management. Our products help maintain clean fields while minimizing impact on desired crops and the environment.",
-    image: "/img/products/herbicides.png",
+    image: "/img/products/zaoborapesticides.webp",
     category: "Pembejeo",
   },
 
@@ -123,7 +123,7 @@ If you're interested in collaborating or want to see sample farms and roast-read
     description:
       "Precision planting equipment for optimal seed placement and spacing.",
     detail: "Modern planting equipment designed to ensure uniform seed distribution and proper depth control. Our planters help maximize germination rates and crop establishment.",
-    image: "/img/products/planters.png",
+    image: "/img/products/seedplanters.webp",
     category: "Machinery",
   },
   {
@@ -132,7 +132,7 @@ If you're interested in collaborating or want to see sample farms and roast-read
     description:
       "Small-scale harvesters for efficient crop harvesting and reduced labor costs.",
     detail: "Compact and efficient harvesting equipment suitable for small to medium-scale farms. Our harvesters help reduce post-harvest losses and improve productivity.",
-    image: "/img/products/harvesters.png",
+    image: "/img/products/harvester.webp",
     category: "Machinery",
   },
   {
@@ -141,7 +141,7 @@ If you're interested in collaborating or want to see sample farms and roast-read
     description:
       "Complete irrigation solutions including sprinklers, drip systems, and pumps.",
     detail: "Comprehensive irrigation equipment for efficient water management. Our range includes sprinkler systems for field coverage, drip irrigation for precision watering, and pumps for reliable water delivery. We help you choose the right system for your crops and water sources.",
-    image: "/img/products/irrigation-systems.png",
+    image: "/img/products/zaoborairrigationsystemsupplies.webp",
     category: "Machinery",
   },
 ];

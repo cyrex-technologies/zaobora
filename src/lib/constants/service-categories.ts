@@ -41,7 +41,7 @@ export const SERVICE_CATEGORIES: Record<ServiceCategory, CategoryInfo> = {
     hero: {
       headline:
         "Empowering farmers with tools, knowledge, and opportunities to thrive.",
-      image: "/img/hero/zaoborafarmerempowerment.webp",
+      image: "/img/hero/zaoborafarmerempowermentcoffee.webp",
       cta: [
         { label: "Explore Services", href: "/services/farmers" },
         { label: "Join Us", href: "/contact" },
