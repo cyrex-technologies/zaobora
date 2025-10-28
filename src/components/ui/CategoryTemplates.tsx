@@ -10,6 +10,12 @@ type FaIconsType = {
   [key: string]: IconType;
 };
 
+type CTAType = {
+  label: string;
+  href?: string; // optional for modals
+  type?: "link" | "modal";
+}; 
+
 type CategoryType = {
   id: string;
   title: string;
@@ -17,7 +23,7 @@ type CategoryType = {
   hero: {
     headline: string;
     image: string;
-    cta: { label: string; href: string }[];
+    cta: CTAType[];
   };
   sections: {
     id: string;
