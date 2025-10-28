@@ -23,14 +23,14 @@ export interface ServiceCardType {
 }
 export interface CTA {
   label: string;
-  href?: string;          // for links
-  type?: "button" | "link"; // new property
+  href?: string; // used for links
+  type?: "link" | "modal"; // added new field for modals
 }
 
 export interface CategoryHero {
   headline: string;
   image: string;
-  cta: CTA[]; // use new CTA type
+  cta: CTA[];
 }
 
 export interface CategorySection {
@@ -49,4 +49,12 @@ export interface CategorySection {
     location: string;
   };
   cta?: CTA;
+}
+
+export interface CategoryInfo {
+  id: string;
+  title: string;
+  tagline: string;
+  hero: CategoryHero;
+  sections: CategorySection[];
 }

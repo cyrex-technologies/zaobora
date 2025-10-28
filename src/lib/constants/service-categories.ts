@@ -1,10 +1,47 @@
 // src/lib/constants/service-categories.ts
 import { ServiceCategory } from '@/types/service';
 
+// export interface CategoryHero {
+//   headline: string;
+//   image: string;
+//   cta: Array<{ label: string; href: string }>;
+// }
+
+// export interface CategorySection {
+//   id: string;
+//   title: string;
+//   description: string;
+//   icon: string;
+//   link: string;
+//   content?: string;
+//   stats?: Array<{ value: string; label: string }>;
+//   reasons?: Array<{ title: string; description: string }>;
+//   benefits?: string[];
+//   testimonial?: {
+//     quote: string;
+//     author: string;
+//     location: string;
+//   };
+//   cta?: { label: string; href: string };
+// }
+
+// export interface CategoryInfo {
+//   id: ServiceCategory;
+//   title: string;
+//   tagline: string;
+//   hero: CategoryHero;
+//   sections: CategorySection[];
+// }
+export interface CTA {
+  label: string;
+  href?: string; // used for links
+  type?: "link" | "modal"; // added new field for modals
+}
+
 export interface CategoryHero {
   headline: string;
   image: string;
-  cta: Array<{ label: string; href: string }>;
+  cta: CTA[];
 }
 
 export interface CategorySection {
@@ -22,11 +59,11 @@ export interface CategorySection {
     author: string;
     location: string;
   };
-  cta?: { label: string; href: string };
+  cta?: CTA;
 }
 
 export interface CategoryInfo {
-  id: ServiceCategory;
+  id: string;
   title: string;
   tagline: string;
   hero: CategoryHero;
