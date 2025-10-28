@@ -11,11 +11,11 @@ export const PRODUCTS = [
 
 • Quality assurance & certification: We support your team to get recognized specialty certification (e.g. Fair Trade, Rainforest Alliance, organic, etc.) and maintain rigorous quality control at origin.
 
-• Export preparation & logistics: We manage export processes — documentation, compliance, export logistics — so your coffee arrives at roasters smoothly, reliably, and legally.
+• Export preparation & logistics: We manage export processes, documentation, compliance, export logistics; so your coffee arrives at roasters smoothly, reliably, and legally.
 
 • Traceability & story building: We help document the origin, farms, and practices behind your coffee so roasters (and consumers) can tell the authentic story of your product.
 
-Why work with us? Roasters care deeply about origin, flavor, and ethical supply chains. We share your values: fostering fairness, transparency, and high standards. With us, your green coffee is more than a bean — it's a story of quality, integrity, and sustainability.
+Why work with us? Roasters care deeply about origin, flavor, and ethical supply chains. We share your values: fostering fairness, transparency, and high standards. With us, your green coffee is more than a bean, it's a story of quality, integrity, and sustainability.
 
 If you're interested in collaborating or want to see sample farms and roast-ready coffee lots, contact us and we'll get you started.`,
     image: "/img/products/specialty-coffee.png",
@@ -114,7 +114,7 @@ If you're interested in collaborating or want to see sample farms and roast-read
     description:
       "Reliable tractors for efficient land preparation and farm operations.",
     detail: "Quality tractors suitable for various farm sizes and operations. We provide options ranging from compact models for small farms to powerful units for large-scale operations.",
-    image: "/img/products/tractors.png",
+    image: "/img/products/tractorszaobora.webp",
     category: "Machinery",
   },
   {

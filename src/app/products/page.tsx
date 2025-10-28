@@ -7,6 +7,7 @@ import { FaArrowRight, FaFilter, FaList, FaLeaf, FaSeedling } from "react-icons/
 import { FaThLarge } from "react-icons/fa";
 import { PRODUCTS, getUniqueCategories } from "@/lib/constants/products";
 import Header from "@/components/layout/header/Header";
+import ProductContactModal from "@/components/ui/ProductContactModal";
 
 export default function ProductsPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,6 +15,7 @@ export default function ProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState("All Products");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [searchTerm, setSearchTerm] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
 
   // Get unique categories from products
@@ -401,16 +403,16 @@ export default function ProductsPage() {
           <p className="text-base md:text-lg lg:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Get in touch with us to learn more about our products and how we can meet your agricultural needs.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
+            <button
+              onClick={() => setIsModalOpen(true)}
               className="inline-flex items-center justify-center gap-3 bg-white text-green-600 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
               <span>Contact Us</span>
               <FaArrowRight className="w-5 h-5" />
-            </Link>
-            
+            </button>
+
             <Link
               href="/services"
               className="inline-flex items-center justify-center gap-3 bg-white/20 text-white border-2 border-white/30 px-8 py-4 rounded-xl font-semibold hover:bg-white/30 transition-all duration-300"
@@ -420,6 +422,9 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
+
+      {/* ✅ Modal Component */}
+      <ProductContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }
