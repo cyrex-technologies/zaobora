@@ -68,7 +68,7 @@ const Hero = ({ category }: { category: CategoryType }) => (
         {category.hero.cta.map((cta, i) => (
           <Link
             key={i}
-            href={cta.href}
+            href={cta.href ?? "#"}
             className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition"
           >
             {cta.label}
