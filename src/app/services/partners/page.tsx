@@ -68,7 +68,7 @@ export default function PartnersPage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href={category.hero.cta[0].href}
+                href={category.hero.cta[0].href?? "#"}
                 className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-600 to-green-600 
                          text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl 
                          transform hover:scale-105 transition-all duration-300"
@@ -160,7 +160,7 @@ export default function PartnersPage() {
 
           <div className="text-center">
             <Link
-              href={category.sections[1].cta!.href}
+              href={category.hero.cta[0].href ?? "#"}
               className="inline-flex items-center gap-3 bg-gradient-to-r from-green-600 to-emerald-600 
                        text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl 
                        transform hover:scale-105 transition-all duration-300"
