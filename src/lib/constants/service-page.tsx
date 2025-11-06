@@ -120,4 +120,76 @@ export const SERVICE_PAGES: Record<string, DetailedService> = {
       { step: 3, title: "Management", description: "Ensure productivity and compliance." },
     ],
   },
+  "irrigation-systems": {
+  ...SERVICES_CONTENT.cards.find(s => s.slug === "irrigation-systems")!,
+  categoryGroup: "farmers",
+  fullDescription: `We design and implement efficient irrigation systems that save water, boost productivity, and lower production costs. Our irrigation solutions ensure that farmers can maintain consistent yields while conserving precious water resources.`,
+  keyBenefits: [
+    "Improved water efficiency",
+    "Reduced irrigation costs",
+    "Increased crop yields",
+    "Reliable water supply during dry seasons"
+  ],
+  detailedServices: [
+    { title: "System Design & Consultancy", description: "Customized irrigation planning based on crop type, soil, and terrain.", icon: "FaPencilRuler" },
+    { title: "Drip & Sprinkler Installation", description: "Modern irrigation systems designed for maximum water efficiency.", icon: "FaTint" },
+    { title: "Maintenance & Support", description: "Comprehensive servicing and system performance checks.", icon: "FaTools" },
+    { title: "Water Resource Management", description: "Solutions that ensure sustainable water use and distribution.", icon: "FaWater" }
+  ],
+  processSteps: [
+    { step: 1, title: "Farm Survey", description: "Assess water needs and farm conditions." },
+    { step: 2, title: "System Design", description: "Develop custom irrigation layout and plan." },
+    { step: 3, title: "Installation", description: "Install and test the irrigation infrastructure." },
+    { step: 4, title: "Training & Support", description: "Train farmers on usage and provide long-term support." }
+  ]
+},
+
+"research-data": {
+  ...SERVICES_CONTENT.cards.find(s => s.slug === "research-data")!,
+  categoryGroup: "partners",
+  fullDescription: `We collect, analyze, and interpret farmer data to enhance decision-making for agricultural development. By integrating agronomic, financial, and environmental data, we enable evidence-based planning for farmers, partners, and policymakers.`,
+  keyBenefits: [
+    "Data-driven agricultural planning",
+    "Enhanced transparency and accountability",
+    "Improved productivity tracking",
+    "Better access to financial services"
+  ],
+  detailedServices: [
+    { title: "Farmer Profiling", description: "Build detailed profiles for farmers including production and financial data.", icon: "FaUserGraduate" },
+    { title: "Agronomic Data Monitoring", description: "Track seed, fertilizer, irrigation, and yield data across regions.", icon: "FaChartLine" },
+    { title: "Geospatial Mapping", description: "Use satellite and GIS tools for precision agriculture insights.", icon: "FaGlobeAfrica" },
+    { title: "Performance Analytics", description: "Generate dashboards and reports for better farm management decisions.", icon: "FaChartPie" }
+  ],
+  processSteps: [
+    { step: 1, title: "Data Collection", description: "Gather on-field and digital data from farms." },
+    { step: 2, title: "Analysis", description: "Turn collected data into actionable insights." },
+    { step: 3, title: "Visualization", description: "Create dashboards and summaries for partners." },
+    { step: 4, title: "Feedback", description: "Share insights with farmers and stakeholders for improvement." }
+  ]
+},
+
+"information-access": {
+  ...SERVICES_CONTENT.cards.find(s => s.slug === "information-access")!,
+  categoryGroup: "partners",
+  fullDescription: `We enhance farmers’ access to timely and localized agricultural information through radio, mobile platforms, and on-the-ground training centers. Our approach bridges the information gap, empowering farmers to make better farming decisions.`,
+  keyBenefits: [
+    "Improved access to agricultural knowledge",
+    "Increased farmer engagement",
+    "Faster dissemination of best practices",
+    "Enhanced collaboration between stakeholders"
+  ],
+  detailedServices: [
+    { title: "Farm Radio Programs", description: "Broadcast agricultural advice, weather updates, and market prices.", icon: "FaRadio" },
+    { title: "Mobile Information Centers", description: "Provide farmers with localized data through mobile and digital tools.", icon: "FaMobileScreen" },
+    { title: "Community Exhibitions", description: "Promote technology adoption through local events and workshops.", icon: "FaUsers" },
+    { title: "Agro-Dealer Information Hubs", description: "Train local dealers to act as key sources of farming information.", icon: "FaHandshake" }
+  ],
+  processSteps: [
+    { step: 1, title: "Content Development", description: "Create educational and advisory content for farmers." },
+    { step: 2, title: "Dissemination", description: "Broadcast and distribute information through multiple channels." },
+    { step: 3, title: "Engagement", description: "Facilitate Q&A sessions, demonstrations, and local events." },
+    { step: 4, title: "Feedback Loop", description: "Collect farmer feedback to improve content and delivery." }
+  ]
+},
+
 };

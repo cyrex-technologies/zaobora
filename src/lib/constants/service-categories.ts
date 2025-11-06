@@ -74,8 +74,8 @@ export const SERVICE_CATEGORIES: Record<ServiceCategory, CategoryInfo> = {
         "Empowering farmers with tools, knowledge, and opportunities to thrive.",
       image: "/img/hero/zaoborafarmerempowermentcoffee.webp",
       cta: [
-        { label: "Explore Services", href: "/services/farmers" },
         { label: "Join Us", type: "modal"},
+        // { label: "Explore Services", href: "/services/farmers" },
       ],
     },
     sections: [
@@ -88,7 +88,7 @@ export const SERVICE_CATEGORIES: Record<ServiceCategory, CategoryInfo> = {
         content: "Our comprehensive training programs cover everything from soil management to market access. Learn from experts and experienced farmers in your community.",
         cta: {
           label: "Join Training Program",
-          href: "/services/farmers/training"
+          type: "modal"
         }
       },
       {
@@ -147,8 +147,8 @@ export const SERVICE_CATEGORIES: Record<ServiceCategory, CategoryInfo> = {
         "Partnering with agri-dealers to build stronger local supply chains.",
       image: "/img/hero/zaoboraagriinpunts.webp",
       cta: [
-        { label: "Join Our Network", href: "/contact" },
-        { label: "Explore Services", href: "/services/agrodealers" },
+        { label: "Join Our Network", type: "modal" },
+        // { label: "Explore Services", href: "/services/agrodealers" },
       ],
     },
     sections: [
@@ -188,8 +188,8 @@ export const SERVICE_CATEGORIES: Record<ServiceCategory, CategoryInfo> = {
         "We collaborate with organizations and institutions to accelerate agricultural transformation.",
       image: "/img/hero/zaoboracallforpartners.webp",
       cta: [
-        { label: "Become a Partner", href: "/get-involved/partnership" },
-        { label: "Explore Services", href: "/services/partners" },
+        { label: "Become a Partner", type: "modal" },
+        // { label: "Explore Services", href: "/services/partners" },
       ],
     },
     sections: [
@@ -246,11 +246,11 @@ export const SERVICE_CATEGORIES: Record<ServiceCategory, CategoryInfo> = {
     tagline: "Invest in Sustainable Agriculture",
     hero: {
       headline:
-        "Comprehensive support for investors developing agri-projects in Tanzania.",
+        "Partner with us to scale regenerative farming practices across Tanzania, creating sustainable value for farmers, communities, and the environment.",
       image: "/img/hero/zaoboracallforinvestors.webp",
       cta: [
-        { label: "Start Investing", href: "/contact" },
-        { label: "View Opportunities", href: "/services/investors" },
+        { label: "Start Investing", type: "modal" },
+        // { label: "View Opportunities", href: "/services/investors" },
       ],
     },
     sections: [

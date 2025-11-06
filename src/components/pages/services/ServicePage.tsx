@@ -5,7 +5,12 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaCheck } from "react-icons/fa6";
+import * as FaIcons from "react-icons/fa6";
+import * as FaIconsOld from "react-icons/fa";
+
 // import {FaQuoteLeft} from 'react-icons/fa';
+
+const ICONS = { ...FaIcons, ...FaIconsOld };
 
 
 interface ServiceData {
@@ -147,7 +152,10 @@ export default function ServicePage({ serviceData }: { serviceData: ServiceData 
       {serviceData.detailedServices.map((item, idx) => (
         <div key={idx} className="flex items-start gap-4">
           <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-green-100 text-2xl">
-            {item.icon}
+            {(() => {
+              const IconComponent = ICONS[item.icon as keyof typeof ICONS];
+              return IconComponent ? <IconComponent className="text-green-600 text-2xl"  /> : null;
+              })()}
           </div>
           <div>
             <h4 className="text-lg font-medium text-gray-800">{item.title}</h4>
@@ -158,6 +166,32 @@ export default function ServicePage({ serviceData }: { serviceData: ServiceData 
     </div>
   </div>
 )}
+
+{/* Process Steps */}
+{serviceData.processSteps && serviceData.processSteps.length > 0 && (
+  <div className="mb-16">
+    <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+      Our Process
+    </h3>
+    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      {serviceData.processSteps.map((step, idx) => (
+        <div
+          key={idx}
+          className="relative bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg hover:border-green-200 transition-all duration-300"
+        >
+          <div className="flex items-center justify-center w-10 h-10 bg-green-100 text-green-700 rounded-full mb-4 font-bold">
+            {step.step}
+          </div>
+          <h4 className="text-lg font-semibold text-gray-800 mb-2">
+            {step.title}
+          </h4>
+          <p className="text-gray-600">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
+
 
 
         {/* Key Benefits */}
