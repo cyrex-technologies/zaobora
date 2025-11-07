@@ -10,15 +10,13 @@ import {
   InvestorsTemplate,
 } from "@/components/ui/CategoryTemplates";
 
-export default function CategoryPage({
-  params,
-}: {
-  params: { category: string };
-}) {
-  const categoryKey = params.category as keyof typeof SERVICE_CATEGORIES;
-  const category = SERVICE_CATEGORIES[categoryKey];
+export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
+  const { category } = await params; // ✅ must await in Next.js 15+
 
-  if (!category) return notFound();
+  const categoryKey = category as keyof typeof SERVICE_CATEGORIES;
+  const categoryData = SERVICE_CATEGORIES[categoryKey];
+
+  if (!categoryData) return notFound();
 
   const relatedServices = SERVICES_CONTENT.cards.filter(
     (service: ServiceCardType) => service.category === categoryKey
@@ -26,17 +24,13 @@ export default function CategoryPage({
 
   switch (categoryKey) {
     case "farmers":
-      return (
-        <FarmersTemplate category={category} services={relatedServices} />
-      );
+      return <FarmersTemplate category={categoryData} services={relatedServices} />;
     case "agrodealers":
-      return (
-        <AgroDealersTemplate category={category} services={relatedServices} />
-      );
+      return <AgroDealersTemplate category={categoryData} services={relatedServices} />;
     case "partners":
-      return <PartnersTemplate category={category} services={relatedServices} />;
+      return <PartnersTemplate category={categoryData} services={relatedServices} />;
     case "investors":
-      return <InvestorsTemplate category={category} services={relatedServices} />;
+      return <InvestorsTemplate category={categoryData} services={relatedServices} />;
     default:
       return notFound();
   }
