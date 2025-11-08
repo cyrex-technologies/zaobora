@@ -6,6 +6,7 @@ export interface ServiceCardType {
   slug: string;
   icon: string; 
   emoji?: string;
+  image?: string;
   title: string;
   shortDescription: string;
   description: string;

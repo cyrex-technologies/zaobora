@@ -4,6 +4,7 @@ import { ServiceCardType } from "@/types/service";
 
 interface DetailedService extends ServiceCardType {
   fullDescription: string;
+  image?: string;
   keyBenefits: string[];
   detailedServices: { title: string; description: string; icon: string }[];
   processSteps: { step: number; title: string; description: string }[];
@@ -32,6 +33,7 @@ export const SERVICE_PAGES: Record<string, DetailedService> = {
   "farmer-advisory": {
     ...SERVICES_CONTENT.cards.find((s) => s.slug === "farmer-advisory")!,
     categoryGroup: "farmers",
+    image:"/img/service/zaoboraFarmer_Training&Capacity_Building.webp",
     fullDescription:
       "We help farmers grow from one good season to a sustainable business. Our advisory blends on-field diagnostics, practical training, and seasonal planning so farmers can increase yields, reduce risk, and unlock better markets. In the Southern Highlands, we work closely with smallholder coffee farmers to improve canopy management, pruning, nutrition plans, and harvest handling—turning good coffee into great income.",
     keyBenefits: [
@@ -102,6 +104,7 @@ export const SERVICE_PAGES: Record<string, DetailedService> = {
   "agro-inputs": {
     ...SERVICES_CONTENT.cards.find((s) => s.slug === "agro-inputs")!,
     categoryGroup: "farmers",
+    image:"/img/service/zaoboraReliable&Certified_Agro-Input Supply.webp",
     fullDescription:
       "Access reliable, high-quality inputs at the right time and right price. We help farmers and groups find trusted fertilizers, seeds, and crop protection products—and use them correctly for maximum returns.",
     keyBenefits: [
@@ -159,6 +162,7 @@ export const SERVICE_PAGES: Record<string, DetailedService> = {
   "credit-loans": {
     ...SERVICES_CONTENT.cards.find((s) => s.slug === "credit-loans")!,
     categoryGroup: "farmers",
+    image:"/img/service/zaoboraDealer_Working_Capital&Input_Finance_Support.webp",
     fullDescription:
       "We help organized farmer groups access input finance that is tied to production goals. With basic records and repayment discipline, farmers unlock fertilizer, seed, and crop protection on time and pay back from harvest proceeds.",
     keyBenefits: [
@@ -222,6 +226,7 @@ export const SERVICE_PAGES: Record<string, DetailedService> = {
   "soil-health": {
     ...SERVICES_CONTENT.cards.find((s) => s.slug === "soil-health")!,
     categoryGroup: "farmers",
+    image:"/img/service/zaoboraSoil_Health&Crop_Fertility_Support.webp",
     fullDescription:
       "Profitable farming starts with healthy soil. We analyze soil nutrients, structure, and pH, then translate results into practical fertility plans—so every input delivers a return.",
     keyBenefits: [
@@ -279,6 +284,7 @@ export const SERVICE_PAGES: Record<string, DetailedService> = {
   "irrigation-systems": {
     ...SERVICES_CONTENT.cards.find((s) => s.slug === "irrigation-systems")!,
     categoryGroup: "farmers",
+    image:"/img/products/zaoborairrigationsystemsupplies.webp",
     fullDescription:
       "Design and deploy irrigation that pays for itself. We engineer water-efficient systems that stabilize yields, lower risk, and reduce unit costs—whether you are upgrading a small plot or scaling a commercial block.",
     keyBenefits: [
@@ -348,6 +354,7 @@ export const SERVICE_PAGES: Record<string, DetailedService> = {
   "research-data": {
     ...SERVICES_CONTENT.cards.find((s) => s.slug === "research-data")!,
     categoryGroup: "partners",
+    image:"/img/hero/zaoboracallforpartners.webp",
     fullDescription:
       "Turn scattered farmer information into decisions that move the sector. We build farmer profiles, collect agronomic and market data, and visualize performance so partners can target resources and scale impact with confidence.",
     keyBenefits: [
@@ -417,6 +424,7 @@ export const SERVICE_PAGES: Record<string, DetailedService> = {
   "information-access": {
     ...SERVICES_CONTENT.cards.find((s) => s.slug === "information-access")!,
     categoryGroup: "partners",
+    image:"/img/service/zaoboraAgri-Dealer_Business&Product_Training.webp",
     fullDescription:
       "Knowledge moves adoption. We deliver localized, timely information through radio, mobile, and community activations—so farmers make better decisions faster and partners see real behavior change.",
     keyBenefits: [
@@ -486,6 +494,7 @@ export const SERVICE_PAGES: Record<string, DetailedService> = {
   "investment-management": {
     ...SERVICES_CONTENT.cards.find((s) => s.slug === "investment-management")!,
     categoryGroup: "investors",
+    image:"/img/service/zaoboraProfessional_Farm_Management_Services.webp",
     fullDescription:
       "We help investors turn agricultural potential into bankable, well-run operations. From land access and compliance to day-to-day farm management and technical oversight, we de-risk execution and accelerate scale.",
     keyBenefits: [

@@ -7,12 +7,13 @@ export const SERVICES_CONTENT: ServiceSectionType = {
   title: "Integrated Agricultural Solutions",
   description:
     "We support farmers, agro-dealers, investors, and development partners with practical, scalable solutions that increase productivity, strengthen value chains, and create sustainable growth across the agricultural sector.",
-  backgroundImage: "/img/service/tree-background.png", // keep your existing asset
+  backgroundImage: "/img/service/tree-background.png", 
   cards: [
     {
       id: "farmer-advisory",
       slug: "farmer-advisory",
       icon: "FaUserGraduate",
+      image:"/img/service/zaoboraFarmer_Advisory&Field_Training.webp",
       title: "Farmer Advisory & Field Training",
       shortDescription:
         "Hands-on agronomy coaching and seasonal field training to increase yields and improve farm profitability.",
@@ -84,6 +85,7 @@ export const SERVICES_CONTENT: ServiceSectionType = {
       slug: "research-data",
       icon: "FaChartBar",
       title: "Research & Farmer Data Systems",
+      image:"/img/service/zaoboraResearch&Farmer_Data_Systems.webp",
       shortDescription:
         "Collecting, analyzing, and visualizing field data to drive smarter agricultural planning.",
       description:
