@@ -7,11 +7,12 @@ import Link from "next/link";
 import { FaCheck } from "react-icons/fa6";
 import * as FaIcons from "react-icons/fa6";
 import * as FaIconsOld from "react-icons/fa";
+import { IconType } from "react-icons";
 
-// import {FaQuoteLeft} from 'react-icons/fa';
-
-const ICONS = { ...FaIcons, ...FaIconsOld };
-
+const ICONS: Record<string, IconType> = {
+  ...FaIcons,
+  ...FaIconsOld, 
+};
 
 interface ServiceData {
   title: string;
@@ -83,134 +84,97 @@ export default function ServicePage({ serviceData }: { serviceData: ServiceData 
                 <span>{serviceData.category}</span>
               </div>
 
-              {/* Title */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 {serviceData.title}
               </h1>
 
-              {/* Short Description */}
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 {serviceData.shortDescription}
               </p>
-
-              {/* CTA */}
-              {/* <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/contact"
-                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-green-600 to-emerald-600 
-                           text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl 
-                           transform hover:scale-105 transition-all duration-300"
-                >
-                  <span>Get Started</span>
-                  <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
-                </Link>
-
-                <Link
-                  href="#details"
-                  className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 
-                           font-semibold border-2 border-green-200 hover:border-green-300 
-                           px-8 py-4 rounded-xl transition-all duration-300"
-                >
-                  <span>Learn More</span>
-                </Link>
-              </div> */}
             </div>
 
-            {/* Hero Image (optional, if you add per-service images) */}
+            {/* Hero Image */}
             <div
               className={`transform transition-all duration-1000 delay-300 ${
                 isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
               }`}
             >
-              <div className="relative">
-                <Image
-                  src="/img/service/farmer-training.jpg"
-                  alt={serviceData.title}
-                  width={600}
-                  height={400}
-                  className="rounded-2xl shadow-2xl"
-                />
-              </div>
+              <Image
+                src="/img/service/farmer-training.jpg"
+                alt={serviceData.title}
+                width={600}
+                height={400}
+                className="rounded-2xl shadow-2xl"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Detailed Content Section */}
+      {/* DETAILS */}
       <section id="details" className="py-20 container mx-auto px-4 lg:px-6">
-        {/* Full Description */}
-        <div className="max-w-4xl  mb-12 text-left">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-left">Overview</h2>
-          <p className="text-lg text-gray-700 leading-relaxed text-left">{serviceData.fullDescription}</p>
+
+        {/* Overview */}
+        <div className="max-w-4xl mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Overview</h2>
+          <p className="text-lg text-gray-700 leading-relaxed">{serviceData.fullDescription}</p>
         </div>
 
-        {/*What we do*/}
-        {serviceData.detailedServices && (
-  <div className="mb-16">
-    <h3 className="text-2xl font-semibold text-gray-900 mb-6">What We Do</h3>
-    <div className="space-y-6 max-w-4xl">
-      {serviceData.detailedServices.map((item, idx) => (
-        <div key={idx} className="flex items-start gap-4">
-          <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-green-100 text-2xl">
-            {(() => {
-              const IconComponent = ICONS[item.icon as keyof typeof ICONS];
-              return IconComponent ? <IconComponent className="text-green-600 text-2xl"  /> : null;
-              })()}
+        {/* What We Do */}
+        {serviceData.detailedServices?.length ? (
+          <div className="mb-16 max-w-4xl">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-6">What We Do</h3>
+            <div className="space-y-6">
+              {serviceData.detailedServices.map((item, idx) => {
+                const IconComponent = ICONS[item.icon];
+                return (
+                  <div key={idx} className="flex items-start gap-4">
+                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-green-100">
+                      {IconComponent && <IconComponent className="text-green-600 text-2xl" />}
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-medium text-gray-800">{item.title}</h4>
+                      <p className="text-gray-600">{item.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-          <div>
-            <h4 className="text-lg font-medium text-gray-800">{item.title}</h4>
-            <p className="text-gray-600">{item.description}</p>
+        ) : null}
+
+        {/* Process Steps */}
+        {serviceData.processSteps?.length ? (
+          <div className="mb-16">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-6">Our Process</h3>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              {serviceData.processSteps.map((step, idx) => (
+                <div key={idx} className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg hover:border-green-200 transition-all duration-300">
+                  <div className="w-10 h-10 flex items-center justify-center rounded-full bg-green-100 text-green-700 font-bold mb-4">{step.step}</div>
+                  <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
+                  <p className="text-gray-600">{step.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
-  </div>
-)}
-
-{/* Process Steps */}
-{serviceData.processSteps && serviceData.processSteps.length > 0 && (
-  <div className="mb-16">
-    <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-      Our Process
-    </h3>
-    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-      {serviceData.processSteps.map((step, idx) => (
-        <div
-          key={idx}
-          className="relative bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg hover:border-green-200 transition-all duration-300"
-        >
-          <div className="flex items-center justify-center w-10 h-10 bg-green-100 text-green-700 rounded-full mb-4 font-bold">
-            {step.step}
-          </div>
-          <h4 className="text-lg font-semibold text-gray-800 mb-2">
-            {step.title}
-          </h4>
-          <p className="text-gray-600">{step.description}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-)}
-
-
+        ) : null}
 
         {/* Key Benefits */}
-        {serviceData.keyBenefits && (
+        {serviceData.keyBenefits?.length ? (
           <div className="mb-16">
             <h3 className="text-2xl font-semibold text-gray-900 mb-6">Key Benefits</h3>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {serviceData.keyBenefits.map((benefit: string, idx: number) => (
-                <li key={idx} className="flex items-start text-gray-700 gap-3">
+              {serviceData.keyBenefits.map((benefit, idx) => (
+                <li key={idx} className="flex items-start gap-3 text-gray-700">
                   <FaCheck className="text-green-600 mt-1" />
-                  <span>{benefit}</span>
+                  {benefit}
                 </li>
               ))}
             </ul>
           </div>
-        )}
+        ) : null}
+
       </section>
-     
     </div>
-        
   );
 }
