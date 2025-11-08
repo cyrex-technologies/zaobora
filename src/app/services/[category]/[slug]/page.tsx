@@ -20,7 +20,8 @@ export default async function ServiceDetailsPage({ params }: { params: Params })
   const adaptedServiceData = {
     ...serviceData,
     fullDescription: serviceData.description || '', // Use description as fallback
-    description: serviceData.description || serviceData.shortDescription // Ensure description is available
+    description: serviceData.description || serviceData.shortDescription, // Ensure description is available
+    image: serviceData.image || '/default-service-image.jpg', // Fallback image
   };
 
   return <ServicePage serviceData={adaptedServiceData} />;
