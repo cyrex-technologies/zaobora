@@ -1,7 +1,7 @@
 // src/components/ui/CategoryTemplates.tsx
 "use client";
 
-import React, { useState, useEffect, ComponentType } from "react";
+import React, { useState, ComponentType } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import * as FaIcons from "react-icons/fa6";
