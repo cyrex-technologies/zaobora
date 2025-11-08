@@ -128,7 +128,7 @@ const ContactInquiryModal = ({ isOpen, onClose }: ContactInquiryModalProps) => {
           icon: "❌",
         });
       }
-    } catch (error) {
+    } catch (error) { 
       toast.error("Network error. Please check your connection.", {
         icon: "⚠️",
       });
