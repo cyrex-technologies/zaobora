@@ -90,7 +90,6 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
             <div className="space-y-8">
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                  <FaCheck className="w-6 h-6 text-green-600" />
                   About {product.title}
                 </h2>
                 <div className="prose prose-lg max-w-none">
@@ -99,6 +98,42 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                   </p>
                 </div>
               </div>
+
+              {/* What We Do */}
+{product.whatWeDo && (
+  <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100 mb-10">
+    <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+      {product.whatWeDo.title ?? "What We Do"}
+    </h3>
+
+    <ul className="space-y-4">
+      {product.whatWeDo.points.map((point, idx) => (
+        <li key={idx} className="flex items-start gap-3">
+          <FaCheck className="w-5 h-5 text-green-600 mt-1" />
+          <span className="text-gray-700 leading-relaxed">{point}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
+
+{/* Why Work With Us */}
+{product.whyWorkWithUs && (
+  <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
+    <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+      {product.whyWorkWithUs.title ?? "Why Work With Us"}
+    </h3>
+
+    <ul className="space-y-4">
+      {product.whyWorkWithUs.points.map((point, idx) => (
+        <li key={idx} className="flex items-start gap-3">
+          <FaCheck className="w-5 h-5 text-green-600 mt-1" />
+          <span className="text-gray-700 leading-relaxed">{point}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
 
               {/* Key Features (for specific categories) */}
               {(product.category === "Pembejeo" || product.category === "Machinery") && (

@@ -57,7 +57,7 @@ const HeroSection = () => {
               {HERO_CONTENT.title}
             </h1>
             
-            <div className="w-24 h-1.5 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full" />
+            <div className="w-24 h-1.5 bg-linear-to-r from-green-400 to-emerald-400 rounded-full" />
           </div>
 
           {/* Description */}
@@ -141,14 +141,14 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="flex flex-col items-center gap-2 text-white/80">
           <span className="text-sm font-medium">Scroll to explore</span>
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </div>
-      </div>
+      </div> */}
 
       {/* Bottom Fade */}
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10" />

@@ -1,26 +1,36 @@
 export const PRODUCTS = [
   // Cash Crops
   {
-    id: "specialty-coffee",
-    title: "Specialty Coffee",
-    description:
-      "Connecting exceptional specialty coffee to credible roasters through quality assurance, certification, and seamless export logistics.",
-    detail: `At Zaobora, we don't roast or sell coffee directly. Instead, we specialize in building bridges to exceptional specialty coffee through services that guarantee quality, certification, and market access.
+  id: "specialty-coffee",
+  title: "Specialty Coffee",
+  description:
+    "Connecting exceptional specialty coffee to credible roasters through quality assurance, certification, and seamless export logistics.",
+  detail:
+    "Zaobora does not roast or sell coffee directly. We specialize in building bridges between high-quality specialty coffee producers and credible international roasters through structured market access services.",
+  image: "/img/products/zaoboraspecialitycoffee.webp",
+  category: "Cash Crops",
 
-• Curated matchmaking: We connect farmers and cooperatives to credible specialty roasters who share a commitment to traceability, quality, and fairness.
-
-• Quality assurance & certification: We support your team to get recognized specialty certification (e.g. Fair Trade, Rainforest Alliance, organic, etc.) and maintain rigorous quality control at origin.
-
-• Export preparation & logistics: We manage export processes, documentation, compliance, export logistics; so your coffee arrives at roasters smoothly, reliably, and legally.
-
-• Traceability & story building: We help document the origin, farms, and practices behind your coffee so roasters (and consumers) can tell the authentic story of your product.
-
-Why work with us? Roasters care deeply about origin, flavor, and ethical supply chains. We share your values: fostering fairness, transparency, and high standards. With us, your green coffee is more than a bean, it's a story of quality, integrity, and sustainability.
-
-If you're interested in collaborating or want to see sample farms and roast-ready coffee lots, contact us and we'll get you started.`,
-    image: "/img/products/zaoboraspecialitycoffee.webp",
-    category: "Cash Crops",
+  whatWeDo: {
+    title: "What We Do",
+    points: [
+      "Curated matchmaking between farmers, cooperatives, and specialty roasters committed to traceability and quality.",
+      "Quality assurance and certification support including Fair Trade, Rainforest Alliance, Organic, and specialty grading protocols.",
+      "Export preparation and logistics management, covering documentation, compliance, and shipment coordination.",
+      "Traceability and story development that documents origin, farm practices, and social impact."
+    ],
   },
+
+  whyWorkWithUs: {
+    title: "Why Work With Us",
+    points: [
+      "Deep understanding of specialty coffee values: origin, quality, ethics, and transparency.",
+      "Strong relationships with smallholder farmers and cooperatives in the Southern Highlands.",
+      "Experience navigating export regulations and buyer expectations.",
+      "Commitment to long-term, fair, and sustainable value chains."
+    ],
+  },
+}
+,
   {
     id: "maize",
     title: "Maize",
