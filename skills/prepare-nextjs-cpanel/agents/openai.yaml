@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prepare Next.js for cPanel"
+  short_description: "Package Next.js apps for Namecheap cPanel"
+  default_prompt: "Use $prepare-nextjs-cpanel to prepare this Next.js project for deployment through Namecheap cPanel."
