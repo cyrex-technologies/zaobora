@@ -160,13 +160,6 @@ const ServiceSection = () => {
       <div className="absolute inset-0 bg-cover bg-center bg-fixed bg-services-pattern" />
       <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-green-50/90 to-white/95" />
 
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-green-200/20 rounded-full animate-pulse" />
-        <div className="absolute bottom-20 right-20 w-24 h-24 bg-emerald-200/30 rounded-full animate-bounce delay-2000" />
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-green-300/25 rounded-full animate-ping duration-4000" />
-      </div>
-
       <div className="container mx-auto px-4 lg:px-6 relative z-10">
         
         {/* Section Header */}

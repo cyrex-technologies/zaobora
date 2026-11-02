@@ -35,10 +35,6 @@ const AboutSection = () => {
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 -left-20 w-40 h-40 bg-green-100 rounded-full opacity-30 animate-pulse" />
-        <div className="absolute bottom-20 -right-20 w-32 h-32 bg-emerald-100 rounded-full opacity-40 animate-bounce" 
-             style={{ animationDelay: "1s" }} />
-        
         {/* Subtle Pattern */}
         <div className="absolute inset-0 opacity-3">
           <div className="absolute inset-0" style={{
@@ -93,11 +89,6 @@ const AboutSection = () => {
                 </div>
               </div>
 
-              {/* Decorative Elements */}
-              <div className="absolute -top-2 -left-2 w-20 h-20 bg-green-200/30 rounded-full animate-ping" 
-                   style={{ animationDuration: "3s" }} />
-              <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-emerald-300/40 rounded-full animate-pulse" 
-                   style={{ animationDelay: "1.5s" }} />
             </div>
           </div>
 

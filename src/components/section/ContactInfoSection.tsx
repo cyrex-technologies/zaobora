@@ -70,13 +70,6 @@ const ContactInfoSection = () => {
       id="contact-us" 
       className="py-20 bg-gradient-to-b from-white to-green-50 relative overflow-hidden"
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-10 w-20 h-20 bg-green-200/20 rounded-full animate-pulse" />
-        <div className="absolute bottom-20 right-20 w-16 h-16 bg-emerald-200/30 rounded-full animate-bounce" 
-             style={{ animationDelay: "1s" }} />
-      </div>
-
       <div className="container mx-auto px-4 lg:px-6 relative z-10">
         
         {/* Section Header */}

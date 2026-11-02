@@ -135,15 +135,6 @@ const GetInTouchSection = () => {
         </div>
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full animate-pulse" />
-        <div className="absolute bottom-20 right-20 w-24 h-24 bg-yellow-400/20 rounded-full animate-bounce" 
-             style={{ animationDelay: "2s" }} />
-        <div className="absolute top-1/2 right-1/4 w-16 h-16 bg-white/5 rounded-full animate-ping" 
-             style={{ animationDuration: "3s" }} />
-      </div>
-
       <div className="container mx-auto px-4 lg:px-6 relative z-10">
         <div className={`bg-white/10 backdrop-blur-sm rounded-3xl border border-white/20 shadow-2xl 
                        p-8 md:p-12 transform transition-all duration-1000 ${

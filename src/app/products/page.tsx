@@ -70,19 +70,6 @@ export default function ProductsPage() {
         ref={heroRef}
         className="relative pt-20 md:pt-24 pb-16 md:pb-20 bg-gradient-to-br from-green-50 via-white to-emerald-50 overflow-hidden"
       >
-        {/* Background Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-10 md:top-20 left-4 md:left-20 w-16 md:w-32 h-16 md:h-32 bg-green-200/20 rounded-full animate-pulse" />
-          <div
-            className="absolute bottom-10 md:bottom-20 right-4 md:right-20 w-12 md:w-24 h-12 md:h-24 bg-emerald-200/30 rounded-full animate-bounce"
-            style={{ animationDelay: "1s" }}
-          />
-          <div
-            className="absolute top-1/2 left-1/4 w-8 md:w-16 h-8 md:h-16 bg-green-300/25 rounded-full animate-ping"
-            style={{ animationDuration: "4s" }}
-          />
-        </div>
-
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             {/* Breadcrumb */}
